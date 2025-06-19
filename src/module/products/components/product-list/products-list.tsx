@@ -1,12 +1,17 @@
-import styles from "./styles.products-list.module.css";
-import { products } from "../../../../mock/products.mock";
+import styles from "./styles.module.css";
+// import { data } from "../../../../mock/products.mock";
+import { ProductItem } from "../../../products/typing/interfaces";
 
-export const ProductsList = () => {
+type ProductListProps = {
+  data: ProductItem[];
+};
+
+export const ProductsList = ({ data }: ProductListProps) => {
   return (
-    <div>
+    <>
       <ul className={styles.listProduct}>
-        {products.map((item, id) => (
-          <li key={item.id} className={styles.itemProduct}>
+        {data.map((item, id) => (
+          <li key={id} className={styles.itemProduct}>
             <button className={styles.productBtn}>
               <div className={styles.imgContent}>
                 <img
@@ -23,6 +28,6 @@ export const ProductsList = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
