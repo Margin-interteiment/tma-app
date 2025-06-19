@@ -1,7 +1,9 @@
+import { ProductPage } from "../products/pages/products.page";
+
 export const Root = () => {
   return (
     <div>
-      <p> Root Page</p>
+      <ProductPage />
     </div>
   );
 };
