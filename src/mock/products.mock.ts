@@ -1,6 +1,6 @@
 import { ProductItem } from '../module/products/typing/interfaces';
 
-export const data:ProductItem[] =[
+export const products:ProductItem[] =[
   {
     id: 1,
     title: "Apple iPhone 15 Pro Max",
