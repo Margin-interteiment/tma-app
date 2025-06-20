@@ -2,8 +2,8 @@
   display: flex;
   max-width: 400px;
   position: relative;
-  left: 35%;
-  top: 20px;
+  left: 33%;
+  top: 28px;
 }
 
 .itemCategory {
@@ -12,7 +12,6 @@
 }
 
 .categoryBtn {
-  padding: 8px 16px;
   border-radius: 12px;
   border: 1px solid #ddd;
   background-color: white;
@@ -20,12 +19,17 @@
   font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
+  padding: 13px;
+  width: 116px;
 }
 
 .categoryBtnActive {
   background-color: #007aff;
   color: white;
   border: none;
+  padding: 13px;
+  width: 116px;
+  cursor: pointer;
 }
 
 @media (max-width: 590px) {
@@ -33,7 +37,8 @@
     display: flex;
     max-width: 400px;
     position: relative;
-    left: 2%;
-    top: 20px;
+    left: -12%;
+    top: 42px;
+    overflow-x: auto;
   }
 }

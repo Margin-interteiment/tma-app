@@ -62,7 +62,7 @@ export const products:ProductItem[] =[
     id:9,
     title: "Xiaomi 14 Ultra",
     price: 22000,
-    imageUrl: "https://www.mijia-shop.ru/wp-content/uploads/2024/02/Xiaomi-14-Ultra-3.jpg",
+    imageUrl: "https://www.worten.pt/i/8fbbbc3fef1de498bd29e98978cb14b8db322e06",
     category: Category.Android
   }, 
   {
