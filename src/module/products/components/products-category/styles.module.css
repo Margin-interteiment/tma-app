@@ -1,0 +1,39 @@
+.listCategory {
+  display: flex;
+  max-width: 400px;
+  position: relative;
+  left: 35%;
+  top: 20px;
+}
+
+.itemCategory {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.categoryBtn {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.categoryBtnActive {
+  background-color: #007aff;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 590px) {
+  .listCategory {
+    display: flex;
+    max-width: 400px;
+    position: relative;
+    left: 2%;
+    top: 20px;
+  }
+}
