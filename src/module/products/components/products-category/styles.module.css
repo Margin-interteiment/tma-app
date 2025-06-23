@@ -37,8 +37,13 @@
     display: flex;
     max-width: 400px;
     position: relative;
-    left: -12%;
+    left: -9%;
     top: 42px;
     overflow-x: auto;
+  }
+
+  .itemCategory {
+    list-style: none;
+    margin-left: 8px;
   }
 }
