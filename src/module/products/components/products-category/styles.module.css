@@ -1,0 +1,44 @@
+.listCategory {
+  display: flex;
+  max-width: 400px;
+  position: relative;
+  left: 33%;
+  top: 28px;
+}
+
+.itemCategory {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.categoryBtn {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  padding: 13px;
+  width: 116px;
+}
+
+.categoryBtnActive {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 13px;
+  width: 116px;
+  cursor: pointer;
+}
+
+@media (max-width: 590px) {
+  .listCategory {
+    display: flex;
+    max-width: 400px;
+    position: relative;
+    left: -12%;
+    top: 42px;
+    overflow-x: auto;
+  }
+}

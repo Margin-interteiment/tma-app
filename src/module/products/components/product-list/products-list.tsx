@@ -19,7 +19,7 @@ export const ProductsList = ({ data }: ProductListProps) => {
               />
             </div>
             <div className={styles.aboutProduct}>
-              <h2 className={styles.titleProduct}>{item.title}</h2>
+              <p className={styles.titleProduct}>{item.title}</p>
               <p className={styles.priceProduct}>{item.price} UAH</p>
             </div>
           </button>
