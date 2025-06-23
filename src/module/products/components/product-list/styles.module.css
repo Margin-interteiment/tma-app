@@ -102,6 +102,12 @@
     max-width: 340px;
     position: relative;
     top: 47px;
-    left: -36px;
+    left: -34px;
+  }
+
+  .itemProduct {
+    list-style: none;
+    max-width: 240px;
+    margin-left: -3px;
   }
 }
