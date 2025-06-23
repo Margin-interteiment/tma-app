@@ -98,8 +98,8 @@
   .listProduct {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 7px;
-    max-width: 413px;
+    column-gap: 1px;
+    max-width: 340px;
     position: relative;
     top: 47px;
     left: -36px;
