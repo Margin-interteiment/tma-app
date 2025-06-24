@@ -7,20 +7,20 @@
   top: 29px;
 }
 
-.ProductButtonsItem {
+.productButtonsItem {
   list-style: none;
 }
 
-.ProductButtonsItemButton {
+.productButtonsItemButton {
   background-color: transparent;
   border: none;
 }
 
-.ProductButtonsImgFilter {
+.productButtonsImgFilter {
   width: 20px;
   height: 20px;
 }
-.ProductButtonsImgUser {
+.productButtonsImgUser {
   width: 20px;
   height: 20px;
   position: relative;
@@ -36,7 +36,7 @@
     left: 402px;
     top: 29px;
   }
-  .ProductButtonsImgUser {
+  .productButtonsImgUser {
     width: 20px;
     height: 20px;
     position: relative;

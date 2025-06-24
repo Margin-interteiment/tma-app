@@ -1,5 +1,5 @@
 import style from "./styles.module.css";
-import { Category } from "../../../products/typing/enums";
+import { Category } from "../../typing/enums";
 
 type ProductsCategoryProps = {
   selected: Category | null;

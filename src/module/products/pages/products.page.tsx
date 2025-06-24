@@ -1,9 +1,9 @@
 import { ProductsList } from "../components/product-list/products-list";
 import { products } from "../../../mock/products.mock";
-import { ProductsCategory } from "../components/products-category/products-category";
+import { ProductsCategory } from "../components/products-category";
 import { Category } from "../typing/enums";
 import { useState } from "react";
-import { ProductButtons } from "../components/product-buttons/product-buttons";
+import { ProductButtons } from "../components/product-buttons";
 
 export const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(

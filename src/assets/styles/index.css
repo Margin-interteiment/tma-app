@@ -185,3 +185,8 @@ input {
   all: unset;
   width: 0px;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
