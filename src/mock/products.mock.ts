@@ -1,5 +1,5 @@
 import { ProductItem } from '../module/products/typing/interfaces';
-import { Category } from '../module/products/typing/enums';
+import { Category, Color, Brands,Size } from '../module/products/typing/enums';
 
 export const products:ProductItem[] =[
   {
@@ -7,69 +7,99 @@ export const products:ProductItem[] =[
     title: "Apple iPhone 15 Pro Max",
     price: 43400,
     imageUrl:"https://raw.githubusercontent.com/hdpngworld/HPW/main/uploads/65038654434d0-iPhone%2015%20Pro%20Natural%20titanium%20png.png",
-    category: Category.IOS
+    category: Category.IOS,
+    size: [Size.S15],
+    color: [Color.Black, Color.Grey, Color.White, Color.Blue, Color.Gold],
+    brand: Brands.Apple
   },
   {
     id:2,
     title: "Apple iPhone 14 Pro",
     price: 28000,
     imageUrl: "/images/tel2.1.png",
-    category: Category.IOS
+    category: Category.IOS,
+    size: [Size.S14],
+    color: [Color.Black, Color.White, Color.Gold],
+    brand: Brands.Apple
   }, 
   {
     id:3,
     title: "Samsung  Galaxy S24 Ultra",
     price: 32500,
     imageUrl: "/images/tel3.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S12],
+    color: [Color.Black, Color.Grey, Color.White, Color.Blue],
+    brand: Brands.Samsung
   }, 
   {
     id:4,
     title: "Samsung Galaxy Z Fold5",
     price: 40500,
     imageUrl: "/images/tel4.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S13, Size.S14],
+    color: [Color.Black],
+    brand: Brands.Samsung
   }, 
   {
     id:5,
     title: "Huawei Mate 60 Pro+",
     price: 57000,
     imageUrl: "/images/tel5.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S14],
+    color: [Color.Black, Color.Grey, Color.White],
+    brand: Brands.Huawei
   }, 
   {
     id:6,
     title: "Huawei P60 Art",
     price: 41000,
     imageUrl: "/images/tel6.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S13, Size.S14],
+    color: [Color.Black, Color.Grey, Color.White],
+    brand: Brands.Huawei
   }, 
   {
     id:7,
     title: "Sony Xperia 1 VI",
     price: 26100,
     imageUrl: "/images/tel7.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S12],
+    color: [Color.Black, Color.Grey, Color.White],
+    brand: Brands.Sony
   }, 
   {
     id:8,
     title: "Google Pixel 8 Pro",
     price: 20000,
     imageUrl: "/images/tel8.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S12],
+    color: [Color.Black, Color.Grey, Color.White],
+    brand: Brands.Google
   }, 
   {
     id:9,
     title: "Xiaomi 14 Ultra",
     price: 22000,
     imageUrl: "/images/tel9.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S12, Size.S13],
+    color: [Color.Black, Color.Grey, Color.White],
+    brand: Brands.Xiaomi
   }, 
   {
     id:10,
     title: "Asus ROG Phone 8 Pro",
     price: 60000,
     imageUrl: "/images/tel10.1.png",
-    category: Category.Android
+    category: Category.Android,
+    size: [Size.S15, Size.S14],
+    color: [Color.Black, Color.Grey, Color.White],
+    brand: Brands.Asus
   }, 
 ]
