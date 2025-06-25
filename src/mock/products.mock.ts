@@ -48,7 +48,7 @@ export const products:ProductItem[] =[
     price: 57000,
     imageUrl: "/images/tel5.1.png",
     category: Category.Android,
-    size: [Size.S14],
+    size: [Size.S14, Size.S16],
     color: [Color.Black, Color.Grey, Color.White],
     brand: Brands.Huawei
   }, 

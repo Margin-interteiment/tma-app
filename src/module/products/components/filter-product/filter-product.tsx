@@ -1,4 +1,6 @@
 import { Sheet } from "react-modal-sheet";
+import { OptionColor } from "../option-color";
+import { OptionSelect } from "../option-select";
 
 type FilterProductProps = {
   isOpen: boolean;
@@ -10,7 +12,10 @@ export const FilterProduct = ({ isOpen, setOpen }: FilterProductProps) => {
     <Sheet isOpen={isOpen} onClose={() => setOpen(!isOpen)}>
       <Sheet.Container>
         <Sheet.Header />
-        <Sheet.Content></Sheet.Content>
+        <Sheet.Content>
+          <OptionColor />
+          <OptionSelect />
+        </Sheet.Content>
       </Sheet.Container>
       <Sheet.Backdrop />
     </Sheet>

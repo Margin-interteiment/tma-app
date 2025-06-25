@@ -5,11 +5,12 @@ export enum Category {
 }
 
 export enum Color{
-  Black = 'Black',
-  Grey = 'Grey',
-  White = 'White',
-  Blue = 'Blue',
-  Gold = 'Gold',
+  Black = 'Чорний',
+  Grey = 'Сірий',
+  White = 'Білий',
+  Blue = 'Синій',
+  Gold = 'Золотий',
+  
 }
 
 export enum Brands{
@@ -27,4 +28,5 @@ export enum Size {
   S13 = '13,5',
   S14 = '14,5',
   S15 = '15,5',
+  S16 = '16,5',
 }
