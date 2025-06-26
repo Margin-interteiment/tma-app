@@ -1,7 +1,5 @@
+import { ProductSlider } from "../components/product-slider";
+
 export const ProductDetailedPage = () => {
-  return (
-    <div>
-      <h1>Product Detailed Page</h1>
-    </div>
-  );
+  return <ProductSlider />;
 };

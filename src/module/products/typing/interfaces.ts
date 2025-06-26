@@ -3,7 +3,7 @@ export interface ProductItem{
   id:number;
   title: string;
   price: number;
-  imageUrl:string;
+  imageUrl: string[];
   category: Category;
   size: Size[];
   color: Color[];

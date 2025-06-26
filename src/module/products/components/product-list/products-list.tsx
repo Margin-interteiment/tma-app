@@ -24,7 +24,7 @@ export const ProductsList = ({ data }: ProductListProps) => {
             <div className={styles.imgContent}>
               <img
                 className={styles.productImg}
-                src={item.imageUrl}
+                src={item.imageUrl[0]}
                 alt="image product item"
               />
             </div>
