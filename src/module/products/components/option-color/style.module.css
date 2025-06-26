@@ -1,6 +1,5 @@
 .optionColorItem {
   list-style: none;
-  max-width: 300px;
 }
 
 .optionColorBox {
@@ -11,18 +10,19 @@
   border: 1px solid #e4e4e4;
   order: 1;
   position: relative;
-  top: 7px;
-  left: 7px;
+  top: 3px;
+  left: 5px;
 }
 
 .optionColorBtn {
   padding: 4px;
   border-radius: 100px;
   border: 1px solid #e4e4e4;
-  width: 112px;
+  width: 105px;
   cursor: pointer;
   background-color: transparent;
   display: flex;
+  height: 43px;
 }
 
 .optionColorText {
@@ -30,33 +30,32 @@
   order: 2;
   font-weight: 600;
   position: relative;
-  left: 14px;
+  left: 11px;
+  bottom: 3px;
 }
 
 .optionColorList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
+  gap: 8px;
   position: relative;
-  right: 24px;
-  top: 279px;
-  z-index: 20;
+  right: 21px;
+  bottom: 48px;
 }
 
 .optionColorTitle {
   color: #1a1a1a;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 500;
   position: relative;
-  top: 277px;
-  left: 25px;
+  left: 31px;
+  bottom: 43px;
 }
 
 .active {
   border: 1px solid #007aff;
   padding: 4px;
   border-radius: 100px;
-  width: 112px;
   cursor: pointer;
   background-color: transparent;
   display: flex;
@@ -64,5 +63,6 @@
 
 .optionColor {
   position: relative;
-  bottom: 142px;
+  bottom: 409px;
+  right: 8px;
 }

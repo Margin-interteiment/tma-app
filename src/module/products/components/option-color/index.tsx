@@ -1,6 +1,5 @@
 import { Color } from "../../typing/enums";
 import style from "./style.module.css";
-import { useState } from "react";
 
 const colorMap: Record<string, string> = {
   Чорний: "#1A1A1A",
@@ -10,18 +9,22 @@ const colorMap: Record<string, string> = {
   Золотий: "#D7A55B",
 };
 
-export const OptionColor = () => {
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
+type OptionColorProps = {
+  selectedColors: string[];
+  onColorChange: (colors: string[]) => void;
+};
 
+export const OptionColor = ({
+  selectedColors,
+  onColorChange,
+}: OptionColorProps) => {
   const toggleColor = (color: string) => {
-    setSelectedColors((prevColors) =>
-      prevColors.includes(color)
-        ? prevColors.filter((c) => c !== color)
-        : [...prevColors, color]
-    );
+    if (selectedColors.includes(color)) {
+      onColorChange(selectedColors.filter((c) => c !== color));
+    } else {
+      onColorChange([...selectedColors, color]);
+    }
   };
-
-  const isColorSelected = (color: string) => selectedColors.includes(color);
 
   return (
     <div className={style.optionColor}>
@@ -30,17 +33,17 @@ export const OptionColor = () => {
         {Object.values(Color).map((color) => (
           <li key={color} className={style.optionColorItem}>
             <button
+              type="button"
               className={`${style.optionColorBtn} ${
-                isColorSelected(color) ? style.active : ""
+                selectedColors.includes(color) ? style.active : ""
               }`}
               onClick={() => toggleColor(color)}
             >
               <p className={style.optionColorText}>{color}</p>
-
               <span
                 className={style.optionColorBox}
                 style={{ backgroundColor: colorMap[color] }}
-              ></span>
+              />
             </button>
           </li>
         ))}

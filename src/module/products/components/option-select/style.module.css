@@ -74,45 +74,42 @@
   border: 1px solid #007aff;
 }
 
-.mainOption {
-  position: relative;
-  bottom: 211px;
-}
-
 .optionCategoryItem {
   list-style: none;
   margin-left: 13px;
 }
 
 .optionCategoryList {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   position: relative;
-  right: 39px;
-  top: 47px;
+  right: 44px;
+  top: 10px;
+  max-width: 175px;
 }
 
 .optionCategoryTitle {
-  max-width: 200px;
   color: #1a1a1a;
   font-size: 17px;
   font-weight: 600;
+  left: 22px;
+  max-width: 200px;
   position: relative;
-  left: 24px;
-  top: 41px;
+  top: 17px;
 }
 
 .optionSize {
   position: relative;
-  top: 233px;
+  top: 86px;
 }
 
 .optionSizeList {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 8px;
   position: relative;
-  top: 32px;
-  right: 36px;
+  top: -45px;
+  right: 39px;
+  max-width: 203px;
 }
 
 .optionSizeItem {
@@ -123,27 +120,29 @@
 .optionSizeBtn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 11px;
   border: 1px solid #e4e4e4;
   border-radius: 100px;
   cursor: pointer;
   -webkit-user-select: none;
-  width: 101px;
+  width: 82px;
   padding: 7px;
+  margin-top: 8px;
 }
 
 .optionSizeTitle {
   max-width: 200px;
   position: relative;
-  top: 22px;
-  left: 29px;
+  top: -32px;
+  left: 24px;
   font-size: 17px;
   font-weight: 500;
 }
 
 .optionBrand {
   position: relative;
-  top: 273px;
+  top: 72px;
+  left: -39px;
 }
 
 .optionBrandList {
@@ -151,13 +150,13 @@
   grid-template-columns: repeat(3, auto);
   gap: 8px;
   position: relative;
-  top: 32px;
-  right: 36px;
+  top: -57px;
+  left: 7px;
+  max-width: 300px;
 }
 
 .optionBrandItem {
   list-style: none;
-  margin-left: 13px;
 }
 
 .optionBrandBtn {
@@ -168,14 +167,47 @@
   border-radius: 100px;
   cursor: pointer;
   -webkit-user-select: none;
-  width: 101px;
+  width: 96px;
   padding: 7px;
 }
 
 .optionBrandTitle {
   position: relative;
-  top: 20px;
-  left: 28px;
+  top: -52px;
+  left: 64px;
   font-size: 17px;
   font-weight: 600;
+}
+
+.checkmark.active {
+  background-color: #007aff;
+  border: 1px solid #007aff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.optionCategoryBtn {
+  border: 1px solid #e4e4e4;
+  border-radius: 100px;
+  padding: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 92px;
+}
+
+.optionCategoryBtn.active {
+  border: 1px solid #007aff;
+}
+.optionSizeBtn.active {
+  border: 1px solid #007aff;
+}
+.optionBrandBtn.active {
+  border: 1px solid #007aff;
+}
+
+.optionCategory {
+  position: relative;
+  bottom: 71px;
 }

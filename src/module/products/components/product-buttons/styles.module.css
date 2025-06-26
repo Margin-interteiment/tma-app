@@ -27,6 +27,12 @@
   left: 86px;
 }
 
+.filterActiveBadge {
+  position: relative;
+  bottom: 12px;
+  right: 8px;
+}
+
 @media (max-width: 1200px) {
   .productButtonsList {
     display: flex;
