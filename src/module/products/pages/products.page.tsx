@@ -24,7 +24,7 @@ export const ProductPage = () => {
 
     if (
       filters.sizes.length > 0 &&
-      !filters.sizes.includes(p.size.toString())
+      !filters.sizes.includes(p.sizes.toString())
     ) {
       return false;
     }
@@ -35,7 +35,7 @@ export const ProductPage = () => {
 
     if (
       filters.colors.length > 0 &&
-      !filters.colors.includes(p.color.toString())
+      !filters.colors.includes(p.colors.toString())
     ) {
       return false;
     }

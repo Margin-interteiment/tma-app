@@ -1,0 +1,239 @@
+.productInfoContent {
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: "Segoe UI", sans-serif;
+  color: #1d1d1f;
+}
+
+.productTitle {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 58px;
+  margin-left: 21px;
+}
+
+.productPrice {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-left: 18px;
+  position: relative;
+  bottom: 15px;
+  padding-bottom: 14px;
+  width: 319px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sectionTitleDesk {
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  position: relative;
+  bottom: 22px;
+  left: 16px;
+}
+
+.productDescription {
+  font-size: 14px;
+  color: #8c8c8c;
+  line-height: 1.4;
+  font-weight: 400;
+  max-width: 332px;
+  position: relative;
+  left: 17px;
+  bottom: 29px;
+}
+
+.sectionTitleColor {
+  color: #1a1a1a;
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  left: 17px;
+  bottom: 32px;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  bottom: 41px;
+}
+
+.colorList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  left: 10px;
+  bottom: 32px;
+  max-width: 356px;
+}
+
+.sizeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  max-width: 300px;
+  position: relative;
+  bottom: 35px;
+  left: 14px;
+}
+
+.colorItemBtn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+}
+
+.colorItem {
+  padding: 6px 14px;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 28px;
+  width: 64px;
+}
+
+.colorItemBtnText {
+  position: relative;
+  bottom: 8px;
+  left: -9px;
+  order: 2;
+}
+
+.sectionTitleSize {
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f1f1f;
+  position: relative;
+  bottom: 35px;
+  left: 14px;
+}
+
+.sizeItem {
+  padding: 11px 22px;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  height: 11px;
+  width: 28px;
+}
+
+.sizeItemTitle {
+  position: relative;
+  bottom: 16px;
+  right: 8px;
+}
+
+.sizeItemBtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.sectionTitleDetails {
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  position: relative;
+  bottom: 35px;
+  left: 15px;
+}
+
+.detailItem {
+  display: flex;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.detailItemText {
+  position: relative;
+  color: #8c8c8c;
+  font-weight: 400;
+  font-size: 14px;
+  left: 15px;
+}
+
+.detailItemSpan {
+  position: relative;
+  height: 19px;
+  top: 16px;
+  left: 159px;
+  color: #1a1a1a;
+  font-weight: 400;
+  font-size: 14px;
+  max-width: 116px;
+  text-align: end;
+}
+
+.buttonGroup {
+  display: flex;
+  position: relative;
+  bottom: 31px;
+}
+
+.backButton {
+  background-color: #e3f0ff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #007aff;
+  width: 97px;
+  height: 48px;
+  position: relative;
+  left: 13px;
+}
+
+.colorCircle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
+  order: 1;
+  position: relative;
+  top: 0px;
+  left: -13px;
+  order: 1;
+}
+
+.cartButton {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 233px;
+  position: relative;
+  left: 28px;
+  height: 48px;
+}
+
+.active {
+  border: 1px solid #007aff;
+}
