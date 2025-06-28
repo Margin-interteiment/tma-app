@@ -4,6 +4,7 @@ import { products } from "../../../mock/products.mock";
 import { ProductsCategory } from "../components/products-category";
 import { ProductButtons } from "../components/product-buttons";
 import { FilterProduct } from "../components/filter-product/filter-product";
+import { BasketButton } from "../../basket/components/basket-button";
 
 export const ProductPage = () => {
   const [filters, setFilters] = useState({
@@ -72,6 +73,8 @@ export const ProductPage = () => {
         filters={filters}
         setFilters={setFilters}
       />
+
+      <BasketButton />
     </>
   );
 };

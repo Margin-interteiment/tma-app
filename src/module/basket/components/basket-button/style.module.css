@@ -1,0 +1,14 @@
+.basketBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #007aff;
+  width: 70px;
+  height: 70px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
