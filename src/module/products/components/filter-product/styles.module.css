@@ -3,11 +3,12 @@
   margin-top: -145px;
   position: relative;
   z-index: 200;
+  margin-left: 6px;
 }
 
 .filterButton {
   margin-left: 10px;
-  width: 233px;
+  width: 196px;
   padding: 10px;
   background-color: #007aff;
   color: #ffffff;
@@ -25,7 +26,7 @@
 
 .filterPrev {
   background-color: #e3f0ff;
-  width: 100px;
+  width: 99px;
   color: #007aff;
   border: none;
   border-radius: 8px;
@@ -44,4 +45,8 @@
   font-weight: 500;
   left: 20px;
   top: -33px;
+}
+
+.filterContentBtn {
+  margin-left: 19px;
 }

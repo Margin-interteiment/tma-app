@@ -65,7 +65,7 @@ export const FilterProduct = ({
                 Назад
               </button>
             </div>
-            <div className={style.filterContent}>
+            <div className={style.filterContentBtn}>
               <button
                 onClick={handleApplyFilters}
                 className={style.filterButton}

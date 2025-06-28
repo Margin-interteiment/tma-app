@@ -2,7 +2,7 @@ import style from "./styles.module.css";
 import { Category } from "../../typing/enums";
 
 type ProductsCategoryProps = {
-  selected: Category | null;
+  selected: string | null;
   onSelect: (category: Category | null) => void;
 };
 

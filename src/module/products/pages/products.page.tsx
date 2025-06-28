@@ -2,14 +2,10 @@ import { useState } from "react";
 import { ProductsList } from "../components/product-list/products-list";
 import { products } from "../../../mock/products.mock";
 import { ProductsCategory } from "../components/products-category";
-import { Category } from "../typing/enums";
 import { ProductButtons } from "../components/product-buttons";
 import { FilterProduct } from "../components/filter-product/filter-product";
 
 export const ProductPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
-    null
-  );
   const [filters, setFilters] = useState({
     categories: [] as string[],
     sizes: [] as string[],
@@ -19,9 +15,7 @@ export const ProductPage = () => {
   const [isFilterOpen, setFilterOpen] = useState(false);
 
   const filteredProducts = products.filter((p) => {
-    if (selectedCategory !== null) {
-      if (p.category !== selectedCategory) return false;
-    } else if (
+    if (
       filters.categories.length > 0 &&
       !filters.categories.includes(p.category)
     ) {
@@ -60,10 +54,17 @@ export const ProductPage = () => {
           filters.colors.length > 0
         }
       />
+
       <ProductsCategory
-        selected={selectedCategory}
-        onSelect={setSelectedCategory}
+        selected={filters.categories[0] ?? null}
+        onSelect={(category) =>
+          setFilters({
+            ...filters,
+            categories: category ? [category] : [],
+          })
+        }
       />
+
       <ProductsList data={filteredProducts} />
       <FilterProduct
         isOpen={isFilterOpen}
