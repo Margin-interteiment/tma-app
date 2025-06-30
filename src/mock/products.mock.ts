@@ -78,7 +78,7 @@ export const products: ProductItem[] = [
       "/images/samsungZ-3.1.png",
       "/images/samsungZ-4.1.png"
     ],
-    category: Category.Android,
+    category: Category.New,
     sizes: [Size.S13, Size.S14],
     colors: [Color.Black],
     brand: Brands.Samsung,
@@ -122,7 +122,7 @@ export const products: ProductItem[] = [
       "/images/huaweiArt-3.1.png",
       "/images/huaweiArt-4.1.png"
     ],
-    category: Category.Android,
+    category: Category.New,
     sizes: [Size.S13, Size.S14],
     colors: [Color.Black, Color.Grey, Color.White],
     brand: Brands.Huawei,
@@ -188,7 +188,7 @@ export const products: ProductItem[] = [
       "/images/xiaomi-3.1.png",
       "/images/xiaomi-4.1.png"
     ],
-    category: Category.Android,
+    category: Category.New,
     sizes: [Size.S12, Size.S13],
     colors: [Color.Black, Color.Grey, Color.White],
     brand: Brands.Xiaomi,

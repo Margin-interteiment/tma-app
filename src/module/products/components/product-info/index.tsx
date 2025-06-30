@@ -98,7 +98,7 @@ export const ProductInfo = () => {
               <button
                 className={style.colorItemBtn}
                 onClick={() => handleColorClick(color)}
-                disabled={index < 2}
+                disabled={index > 2}
               >
                 <span
                   className={style.colorCircle}
@@ -124,7 +124,7 @@ export const ProductInfo = () => {
               <button
                 className={style.sizeItemBtn}
                 onClick={() => handleSizeClick(size)}
-                disabled={index === 1}
+                disabled={index > 1}
               >
                 <p className={style.sizeItemTitle}> {size}</p>
               </button>
