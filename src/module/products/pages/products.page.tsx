@@ -5,6 +5,7 @@ import { ProductsCategory } from "../components/products-category";
 import { ProductButtons } from "../components/product-buttons";
 import { FilterProduct } from "../components/filter-product/filter-product";
 import { BasketButton } from "../../basket/components/basket-button";
+import { ProductBanner } from "../components/product-banner";
 
 export const ProductPage = () => {
   const [filters, setFilters] = useState({
@@ -55,6 +56,8 @@ export const ProductPage = () => {
           filters.colors.length > 0
         }
       />
+
+      <ProductBanner />
 
       <ProductsCategory
         selected={filters.categories[0] ?? null}
