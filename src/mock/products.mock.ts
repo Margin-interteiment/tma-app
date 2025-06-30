@@ -79,7 +79,7 @@ export const products: ProductItem[] = [
       "/images/samsungZ-4.1.png"
     ],
     category: Category.New,
-    sizes: [Size.S13, Size.S14],
+    sizes: [Size.S13],
     colors: [Color.Black],
     brand: Brands.Samsung,
     description: "Складний смартфон нового покоління з гнучким екраном.",

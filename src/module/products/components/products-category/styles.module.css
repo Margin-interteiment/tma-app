@@ -40,7 +40,7 @@
 @media (max-width: 590px) {
   .listCategory {
     display: flex;
-    margin-top: 36px;
+    margin-top: 13px;
     overflow-x: auto;
     position: sticky;
     top: 0;
@@ -52,6 +52,6 @@
 
   .itemCategory {
     list-style: none;
-    margin-left: 17px;
+    margin-left: 7px;
   }
 }

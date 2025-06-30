@@ -24,10 +24,6 @@ export const ProductBanner = () => {
       timer = setTimeout(() => {
         setIsVisible(true);
       }, 2 * 60 * 1000);
-    } else {
-      timer = setTimeout(() => {
-        setIsVisible(false);
-      }, 60 * 1000);
     }
     return () => {
       clearInterval(timer);
