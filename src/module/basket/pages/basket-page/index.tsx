@@ -32,81 +32,85 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
             <ul className={style.basketList}>
               {items.map((item) => (
                 <li key={item.id} className={style.basketItem}>
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className={style.basketItemImage}
-                  />
-                  <div className={style.basketItemClose}>
-                    <button
-                      className={style.basketItemCloseBtn}
-                      onClick={() => closeFunc(item.id)}
-                    >
-                      <img
-                        className={style.basketItemCloseImg}
-                        src={closeIcon}
-                      />
-                    </button>
-                  </div>
-                  <div className={style.basketItemOrder}>
-                    <div className={style.basketItemInfo}>
-                      <p className={style.basketItemName}>{item.name}</p>
-                      {item.color && (
-                        <p className={style.basketItemColor}>
-                          Колір:
-                          <span className={style.basketItemColorSpan}>
-                            {item.color}
-                          </span>
-                        </p>
-                      )}
-
-                      <p className={style.basketItemPrice}>{item.price} UAH</p>
+                  <div className={style.basketItemContent}>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className={style.basketItemImage}
+                    />
+                    <div className={style.basketItemClose}>
+                      <button
+                        className={style.basketItemCloseBtn}
+                        onClick={() => closeFunc(item.id)}
+                      >
+                        <img
+                          className={style.basketItemCloseImg}
+                          src={closeIcon}
+                        />
+                      </button>
                     </div>
+                    <div className={style.basketItemOrder}>
+                      <div className={style.basketItemInfo}>
+                        <p className={style.basketItemName}>{item.name}</p>
+                        {item.color && (
+                          <p className={style.basketItemColor}>
+                            Колір:
+                            <span className={style.basketItemColorSpan}>
+                              {item.color}
+                            </span>
+                          </p>
+                        )}
 
-                    <div className={style.basketItemMakePrice}>
-                      <button
-                        className={style.basketItemMinus}
-                        onClick={() => removeFunc(Number(item.id))}
-                      >
-                        <img
-                          className={style.imgOfMinus}
-                          src={minus}
-                          alt="minus"
-                        />
-                      </button>
-                      <p className={style.basketItemQuantity}>
-                        {item.quantity}
-                      </p>
-                      <button
-                        className={style.basketItemPlus}
-                        onClick={() => addFunc(Number(item.id))}
-                      >
-                        <img
-                          className={style.imgOfPlus}
-                          src={plus}
-                          alt="plus"
-                        />
-                      </button>
+                        <p className={style.basketItemPrice}>
+                          {item.price} UAH
+                        </p>
+                      </div>
+
+                      <div className={style.basketItemMakePrice}>
+                        <button
+                          className={style.basketItemMinus}
+                          onClick={() => removeFunc(Number(item.id))}
+                        >
+                          <img
+                            className={style.imgOfMinus}
+                            src={minus}
+                            alt="minus"
+                          />
+                        </button>
+                        <p className={style.basketItemQuantity}>
+                          {item.quantity}
+                        </p>
+                        <button
+                          className={style.basketItemPlus}
+                          onClick={() => addFunc(Number(item.id))}
+                        >
+                          <img
+                            className={style.imgOfPlus}
+                            src={plus}
+                            alt="plus"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </li>
               ))}
+
+              <div className={style.basketItemPay}>
+                <p className={style.basketItemPayTitle}>
+                  До сплати:
+                  <span className={style.basketItemPaySpan}>{total} UAH</span>
+                </p>
+              </div>
+
+              <div className={style.basketItemBtn}>
+                <button className={style.basketItemBtnPrev} onClick={onClose}>
+                  Назад
+                </button>
+                <button className={style.basketItemBtnOrder}>Замовити</button>
+              </div>
             </ul>
           )}
-
-          <div className={style.basketItemPay}>
-            <p className={style.basketItemPayTitle}>
-              До сплати:
-              <span className={style.basketItemPaySpan}>{total} UAH</span>
-            </p>
-          </div>
-
-          <div className={style.basketItemBtn}>
-            <button className={style.basketItemBtnPrev} onClick={onClose}>
-              Назад
-            </button>
-            <button className={style.basketItemBtnOrder}>Замовити</button>
-          </div>
         </Sheet.Content>
       </Sheet.Container>
       <Sheet.Backdrop />

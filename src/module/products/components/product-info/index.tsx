@@ -72,6 +72,7 @@ export const ProductInfo = () => {
         image: product.imageUrl?.[0],
         color: getActiveValue("color"),
       });
+      navigate("/");
     }
   };
 
