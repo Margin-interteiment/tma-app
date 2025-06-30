@@ -59,12 +59,12 @@
     padding: 0;
     margin: -1px;
     max-width: 300px;
-    margin-left: 16px;
+    margin-left: 21px;
   }
 
   .itemProduct {
     list-style: none;
-    margin: -3px -1px;
+    margin: -3px -2px;
     padding: 0;
     width: 78%;
     box-sizing: border-box;

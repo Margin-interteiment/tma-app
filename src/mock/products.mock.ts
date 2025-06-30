@@ -79,7 +79,7 @@ export const products: ProductItem[] = [
       "/images/samsungZ-4.1.png"
     ],
     category: Category.New,
-    sizes: [Size.S13, Size.S14],
+    sizes: [Size.S13],
     colors: [Color.Black],
     brand: Brands.Samsung,
     description: "Складний смартфон нового покоління з гнучким екраном.",
@@ -106,7 +106,7 @@ export const products: ProductItem[] = [
     brand: Brands.Huawei,
     description: "Інноваційний флагман з суперкерамічним корпусом.",
     details: [
-      { label: "Операційна система", value: "HarmonyOS 4.0" },
+      { label: "Операційна система", value: "HarmonyOS" },
       { label: "Роздільна здатність", value: "2720 x 1260" },
       { label: "Частота оновлення", value: "120 Гц" },
       { label: "Оперативна памʼять", value: "16 ГБ" }
@@ -128,7 +128,7 @@ export const products: ProductItem[] = [
     brand: Brands.Huawei,
     description: "Дизайнерський флагман Huawei з камерою Leica.",
     details: [
-      { label: "Операційна система", value: "HarmonyOS 3.1" },
+      { label: "Операційна система", value: "HarmonyOS" },
       { label: "Роздільна здатність", value: "2700 x 1220" },
       { label: "Частота оновлення", value: "120 Гц" },
       { label: "Оперативна памʼять", value: "12 ГБ" }
@@ -194,7 +194,7 @@ export const products: ProductItem[] = [
     brand: Brands.Xiaomi,
     description: "Флагман Xiaomi з передовими камерами від Leica.",
     details: [
-      { label: "Операційна система", value: "Android 14 (HyperOS)" },
+      { label: "Операційна система", value: "Android 14" },
       { label: "Роздільна здатність", value: "3200 x 1440" },
       { label: "Частота оновлення", value: "120 Гц" },
       { label: "Оперативна памʼять", value: "16 ГБ" }
