@@ -2,8 +2,11 @@ import style from "./style.module.css";
 import { products } from "../../../../mock/products.mock";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { useBasketStore } from "../../../../store/useBasketStore";
 export const ProductInfo = () => {
+  const addToBasket = useBasketStore((state) => state.addToBasket);
+  const [showMessage, setShowMessage] = useState(false);
+
   const { id } = useParams();
 
   const colorMap: Record<string, string> = {
@@ -52,6 +55,26 @@ export const ProductInfo = () => {
   const getActiveValue = (type: "color" | "size") =>
     clicked.find((item) => item.type === type)?.value;
 
+  const isReadyToAdd = !!getActiveValue("color") && !!getActiveValue("size");
+
+  const handleAddToBasket = () => {
+    const existingItem = useBasketStore
+      .getState()
+      .items.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      setShowMessage(true);
+    } else {
+      addToBasket({
+        id: product.id,
+        name: product.title,
+        price: product.price,
+        image: product.imageUrl?.[0],
+        color: getActiveValue("color"),
+      });
+    }
+  };
+
   return (
     <div className={style.productInfoContent}>
       <p className={style.productTitle}>{product.title}</p>
@@ -75,6 +98,7 @@ export const ProductInfo = () => {
               <button
                 className={style.colorItemBtn}
                 onClick={() => handleColorClick(color)}
+                disabled={index < 2}
               >
                 <span
                   className={style.colorCircle}
@@ -100,6 +124,7 @@ export const ProductInfo = () => {
               <button
                 className={style.sizeItemBtn}
                 onClick={() => handleSizeClick(size)}
+                disabled={index === 1}
               >
                 <p className={style.sizeItemTitle}> {size}</p>
               </button>
@@ -124,8 +149,31 @@ export const ProductInfo = () => {
         <button className={style.backButton} onClick={() => navigate(-1)}>
           Назад
         </button>
-        <button className={style.cartButton}>Додати в кошик</button>
+        <button
+          className={style.cartButton}
+          disabled={!isReadyToAdd}
+          onClick={handleAddToBasket}
+        >
+          Додати в кошик
+        </button>
       </div>
+
+      {showMessage && (
+        <>
+          <div className={style.popupOverlay} />
+          <div className={style.popupMessage}>
+            <p className={style.popupMessageText}>
+              Цей продукт вже знаходиться в корзині
+            </p>
+            <button
+              className={style.popupMessageBtn}
+              onClick={() => navigate(-1)}
+            >
+              Закрити
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
