@@ -4,9 +4,10 @@ export interface ProductItem{
   title: string;
   price: number;
   imageUrl: string[];
+  description: string;
   category: Category;
-  size: Size[];
-  color: Color[];
+  sizes: Size[];
+  colors: Color[];
   brand: Brands;
-
+  details: { label: string; value: string }[];
 }

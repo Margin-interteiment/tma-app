@@ -19,8 +19,8 @@
   font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
-  padding: 13px;
-  width: 116px;
+  padding: 15px;
+  width: 134px;
 }
 
 .categoryBtn:active {
@@ -31,8 +31,8 @@
   background-color: #007aff;
   color: white;
   border: none;
-  padding: 13px;
-  width: 116px;
+  padding: 15px;
+  width: 134px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -40,7 +40,7 @@
 @media (max-width: 590px) {
   .listCategory {
     display: flex;
-    margin-top: 56px;
+    margin-top: 36px;
     overflow-x: auto;
     position: sticky;
     top: 0;
@@ -52,6 +52,6 @@
 
   .itemCategory {
     list-style: none;
-    margin-left: 8px;
+    margin-left: 17px;
   }
 }

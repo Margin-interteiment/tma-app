@@ -1,15 +1,3 @@
-.optionCategoryBtn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #e4e4e4;
-  border-radius: 100px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  width: 101px;
-  padding: 7px;
-}
-
 .checkmark {
   width: 20px;
   height: 20px;
@@ -193,7 +181,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   width: 92px;
 }
 
