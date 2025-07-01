@@ -37,6 +37,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.listCategory::-webkit-scrollbar {
+  display: none;
+}
+
 @media (max-width: 590px) {
   .listCategory {
     display: flex;
@@ -48,6 +52,8 @@
     background-color: #fff;
     padding: 18px;
     height: 52px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .itemCategory {

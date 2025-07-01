@@ -79,7 +79,9 @@ export const ProductInfo = () => {
   return (
     <div className={style.productInfoContent}>
       <p className={style.productTitle}>{product.title}</p>
-      <p className={style.productPrice}>{product.price} UAH</p>
+      <div className={style.productPriceContent}>
+        <p className={style.productPrice}>{product.price} UAH</p>
+      </div>
 
       <div className={style.productSection}>
         <p className={style.sectionTitleDesk}>Опис</p>

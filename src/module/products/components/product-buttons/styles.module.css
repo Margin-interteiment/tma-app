@@ -3,8 +3,8 @@
   max-width: 300px;
   justify-content: space-between;
   position: relative;
-  left: -30px;
-  top: 16px;
+  left: -12px;
+  top: 12px;
 }
 
 .productButtonsItem {
@@ -75,7 +75,7 @@
     max-width: 258px;
     justify-content: space-between;
     position: relative;
-    left: -26px;
+    left: -12px;
     top: 12px;
   }
 }

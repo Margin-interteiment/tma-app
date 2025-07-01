@@ -18,10 +18,15 @@
   color: #1a1a1a;
   margin-left: 18px;
   position: relative;
-  bottom: 15px;
-  padding-bottom: 14px;
-  width: 319px;
-  border-bottom: 1px solid #ccc;
+}
+
+.productPriceContent {
+  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.productSection {
+  margin-top: 36px;
 }
 
 .sectionTitleDesk {
@@ -111,7 +116,7 @@
 
 .colorItemBtnText {
   position: relative;
-  bottom: 8px;
+  bottom: 6px;
   left: -9px;
   order: 2;
 }
@@ -139,7 +144,7 @@
 
 .sizeItemTitle {
   position: relative;
-  bottom: 16px;
+  bottom: 14px;
   right: 8px;
 }
 
@@ -177,7 +182,7 @@
   position: relative;
   height: 19px;
   top: 16px;
-  left: 138px;
+  left: 163px;
   color: #1a1a1a;
   font-weight: 400;
   font-size: 14px;
@@ -189,7 +194,6 @@
   display: flex;
   position: relative;
   bottom: 31px;
-  max-width: 331px;
 }
 
 .backButton {
@@ -229,9 +233,9 @@
   font-size: 14px;
   cursor: pointer;
   font-weight: 600;
-  width: 215px;
+  width: 256px;
   position: relative;
-  left: 28px;
+  left: 31px;
   height: 48px;
 }
 

@@ -17,8 +17,8 @@
   background-color: #e4e4e4;
   border: 1px solid #e4e4e4;
   border-radius: 15px;
-  height: 164px;
-  width: 150px;
+  height: 165px;
+  width: 161px;
 }
 
 .titleProduct {
@@ -58,8 +58,8 @@
     grid-template-columns: repeat(2, 2fr);
     padding: 0;
     margin: -1px;
-    max-width: 300px;
-    margin-left: 21px;
+    margin-left: 40px;
+    width: 50vw;
   }
 
   .itemProduct {

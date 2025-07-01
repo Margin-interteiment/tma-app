@@ -11,9 +11,8 @@ interface BasketPageProps {
 
 export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
   const items = useBasketStore((state) => state.items);
-  const addFunc = useBasketStore((state) => state.addToQuantity);
-  const removeFunc = useBasketStore((state) => state.removeToQuantity);
-  const closeFunc = useBasketStore((state) => state.removeItem);
+  const { addToQuantity, removeToQuantity, removeItem } = useBasketStore();
+
   const total = items.reduce(
     (sum, item) => sum + item.price * (item.quantity ?? 0),
     0
@@ -41,7 +40,7 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
                     <div className={style.basketItemClose}>
                       <button
                         className={style.basketItemCloseBtn}
-                        onClick={() => closeFunc(item.id)}
+                        onClick={() => removeItem(item.id)}
                       >
                         <img
                           className={style.basketItemCloseImg}
@@ -69,7 +68,7 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
                       <div className={style.basketItemMakePrice}>
                         <button
                           className={style.basketItemMinus}
-                          onClick={() => removeFunc(Number(item.id))}
+                          onClick={() => removeToQuantity(Number(item.id))}
                         >
                           <img
                             className={style.imgOfMinus}
@@ -82,7 +81,7 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
                         </p>
                         <button
                           className={style.basketItemPlus}
-                          onClick={() => addFunc(Number(item.id))}
+                          onClick={() => addToQuantity(Number(item.id))}
                         >
                           <img
                             className={style.imgOfPlus}
