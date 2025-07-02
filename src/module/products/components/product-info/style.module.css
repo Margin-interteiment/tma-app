@@ -116,7 +116,7 @@
 
 .colorItemBtnText {
   position: relative;
-  bottom: 6px;
+  bottom: 4px;
   left: -9px;
   order: 2;
 }
@@ -144,7 +144,7 @@
 
 .sizeItemTitle {
   position: relative;
-  bottom: 14px;
+  bottom: 12px;
   right: 8px;
 }
 

@@ -58,7 +58,18 @@
     grid-template-columns: repeat(2, 2fr);
     padding: 0;
     margin: -1px;
-    margin-left: 40px;
+    margin-left: 31px;
+    width: 50vw;
+  }
+  .listProduct {
+    background: #fff;
+    box-sizing: border-box;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 2fr);
+    padding: 0;
+    margin: -1px;
+    margin-left: 31px;
     width: 50vw;
   }
 
