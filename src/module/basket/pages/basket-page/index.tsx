@@ -4,6 +4,8 @@ import { useBasketStore } from "../../../../store/useBasketStore";
 import minus from "../../../../assets/images/minus.svg";
 import plus from "../../../../assets/images/plus.svg";
 import closeIcon from "../../../../assets/images/closeIcon.svg";
+import arrow from "../../../../assets/images/arrow.svg";
+
 interface BasketPageProps {
   isOpen: boolean;
   onClose: () => void;
@@ -23,10 +25,14 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
       <Sheet.Container>
         <Sheet.Header />
         <Sheet.Content>
-          <p className={style.basketTitle}>Кошик</p>
+          <button className={style.basketBtn} onClick={onClose}>
+            <img className={style.arrowImg} src={arrow} alt="arrow" />
+          </button>
 
           {items.length === 0 ? (
-            <p className={style.emptyBasket}>Кошик порожній</p>
+            <div className={style.emptyBasketContent}>
+              <p className={style.emptyBasket}>Кошик порожній</p>
+            </div>
           ) : (
             <ul className={style.basketList}>
               {items.map((item) => (

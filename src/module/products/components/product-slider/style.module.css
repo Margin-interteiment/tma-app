@@ -42,3 +42,6 @@
   border: none !important;
   outline: none !important;
 }
+:global(.slick-dots) {
+  width: 311px !important;
+}

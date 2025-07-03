@@ -1,14 +1,12 @@
 .filterButtons {
+  margin-top: 62px;
   display: flex;
-  margin-top: -153px;
-  position: relative;
-  z-index: 200;
-  margin-left: 6px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .filterButton {
-  margin-left: 10px;
-  width: 260px;
+  width: 233px;
   padding: 10px;
   background-color: #007aff;
   color: #ffffff;
@@ -26,14 +24,13 @@
 
 .filterPrev {
   background-color: #e3f0ff;
-  width: 99px;
+  width: 97px;
   color: #007aff;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
   padding: 10px;
-  margin-left: 10px;
   height: 48px;
 }
 
@@ -42,11 +39,7 @@
   position: relative;
   max-width: 200px;
   font-size: 20px;
-  font-weight: 500;
-  left: 20px;
-  top: -33px;
-}
-
-.filterContentBtn {
-  margin-left: 19px;
+  font-weight: 600;
+  left: 27px;
+  top: -23px;
 }

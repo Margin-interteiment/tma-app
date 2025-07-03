@@ -8,8 +8,10 @@
 .productTitle {
   font-size: 20px;
   font-weight: 400;
-  margin-top: 58px;
-  margin-left: 21px;
+  margin-top: 49px;
+  margin-left: 20px;
+  max-width: 200px;
+  color: #1f1f1f;
 }
 
 .productPrice {
@@ -17,12 +19,14 @@
   font-weight: 600;
   color: #1a1a1a;
   margin-left: 18px;
+  max-width: 200px;
   position: relative;
+  bottom: -6px;
 }
 
 .productPriceContent {
-  width: 100%;
   border-bottom: 1px solid #e4e4e4;
+  height: 39px;
 }
 
 .productSection {
@@ -47,7 +51,7 @@
   max-width: 332px;
   position: relative;
   left: 17px;
-  bottom: 29px;
+  bottom: 16px;
 }
 
 .sectionTitleColor {
@@ -57,7 +61,7 @@
   font-weight: 600;
   position: relative;
   left: 17px;
-  bottom: 32px;
+  bottom: 44px;
 }
 
 .detailsList {
@@ -66,7 +70,7 @@
   flex-wrap: wrap;
   gap: 8px;
   position: relative;
-  bottom: 41px;
+  bottom: 82px;
 }
 
 .colorList {
@@ -78,7 +82,7 @@
   gap: 8px;
   position: relative;
   left: 10px;
-  bottom: 32px;
+  bottom: 36px;
   max-width: 309px;
 }
 
@@ -92,7 +96,7 @@
   margin-bottom: 16px;
   max-width: 300px;
   position: relative;
-  bottom: 35px;
+  bottom: 55px;
   left: 14px;
 }
 
@@ -104,20 +108,24 @@
   display: flex;
 }
 
+.colorItemBtn:disabled {
+  opacity: 0.5;
+}
+
 .colorItem {
   padding: 6px 14px;
   border: 1px solid #e4e4e4;
-  border-radius: 8px;
+  border-radius: 100px;
   cursor: pointer;
   font-size: 14px;
-  height: 28px;
-  width: 64px;
+  height: 36px;
+  width: 97px;
 }
 
 .colorItemBtnText {
   position: relative;
-  bottom: 4px;
-  left: -9px;
+  bottom: 0px;
+  left: -3px;
   order: 2;
 }
 
@@ -127,25 +135,19 @@
   font-weight: 600;
   color: #1f1f1f;
   position: relative;
-  bottom: 35px;
-  left: 14px;
+  bottom: 64px;
+  left: 16px;
 }
 
 .sizeItem {
-  padding: 11px 22px;
+  padding: 4px 14px;
   border: 1px solid #e4e4e4;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
-  height: 11px;
-  width: 28px;
-}
-
-.sizeItemTitle {
-  position: relative;
-  bottom: 12px;
-  right: 8px;
+  height: 30px;
+  width: 60px;
 }
 
 .sizeItemBtn {
@@ -158,16 +160,17 @@
   max-width: 200px;
   font-size: 16px;
   font-weight: 600;
-  color: #000000;
+  color: #1a1a1a;
   position: relative;
-  bottom: 35px;
-  left: 15px;
+  bottom: 74px;
+  left: 16px;
 }
 
 .detailItem {
   display: flex;
-  padding-bottom: 6px;
+  padding-bottom: 18px;
   border-bottom: 1px solid #e4e4e4;
+  margin-top: 19px;
 }
 
 .detailItemText {
@@ -181,8 +184,8 @@
 .detailItemSpan {
   position: relative;
   height: 19px;
-  top: 16px;
-  left: 163px;
+  top: 3px;
+  left: 130px;
   color: #1a1a1a;
   font-weight: 400;
   font-size: 14px;
@@ -191,9 +194,10 @@
 }
 
 .buttonGroup {
+  margin-top: -62px;
   display: flex;
-  position: relative;
-  bottom: 31px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .backButton {
@@ -208,7 +212,6 @@
   width: 97px;
   height: 48px;
   position: relative;
-  left: 13px;
 }
 
 .colorCircle {
@@ -220,7 +223,7 @@
   order: 1;
   position: relative;
   top: 0px;
-  left: -13px;
+  left: -7px;
   order: 1;
 }
 
@@ -233,9 +236,8 @@
   font-size: 14px;
   cursor: pointer;
   font-weight: 600;
-  width: 256px;
+  width: 220px;
   position: relative;
-  left: 31px;
   height: 48px;
 }
 
@@ -259,7 +261,7 @@
   padding: 16px 24px;
   border-radius: 8px;
   height: 102px;
-  width: 260px;
+  width: 282px;
   font-weight: 400;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }

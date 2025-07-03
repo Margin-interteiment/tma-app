@@ -17,8 +17,9 @@
   background-color: #e4e4e4;
   border: 1px solid #e4e4e4;
   border-radius: 15px;
-  height: 165px;
+  height: 164px;
   width: 161px;
+  padding: 3px;
 }
 
 .titleProduct {
@@ -42,43 +43,29 @@
   max-width: 144px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.listProduct {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: max-content;
+}
+
+.itemProduct {
+  list-style: none;
+  width: 160px;
+}
+
 @media (max-width: 590px) {
   .listProductContent {
     margin: 0;
     padding: 0;
     width: 100%;
     box-sizing: border-box;
-  }
-
-  .listProduct {
-    background: #fff;
-    box-sizing: border-box;
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(2, 2fr);
-    padding: 0;
-    margin: -1px;
-    margin-left: 31px;
-    width: 50vw;
-  }
-  .listProduct {
-    background: #fff;
-    box-sizing: border-box;
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(2, 2fr);
-    padding: 0;
-    margin: -1px;
-    margin-left: 31px;
-    width: 50vw;
-  }
-
-  .itemProduct {
-    list-style: none;
-    margin: -3px -2px;
-    padding: 0;
-    width: 78%;
-    box-sizing: border-box;
-    max-width: 441px;
   }
 }

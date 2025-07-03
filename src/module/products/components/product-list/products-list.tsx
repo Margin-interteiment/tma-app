@@ -14,27 +14,29 @@ export const ProductsList = ({ data }: ProductListProps) => {
   };
 
   return (
-    <ul className={styles.listProduct}>
-      {data.map((item, id) => (
-        <li key={id} className={styles.itemProduct}>
-          <button
-            className={styles.productBtn}
-            onClick={() => handleProductClick(item.id)}
-          >
-            <div className={styles.imgContent}>
-              <img
-                className={styles.productImg}
-                src={item.imageUrl[0]}
-                alt="image product item"
-              />
-            </div>
-            <div className={styles.aboutProduct}>
-              <p className={styles.titleProduct}>{item.title}</p>
-              <p className={styles.priceProduct}>{item.price} UAH</p>
-            </div>
-          </button>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.container}>
+      <ul className={styles.listProduct}>
+        {data.map((item, id) => (
+          <li key={id} className={styles.itemProduct}>
+            <button
+              className={styles.productBtn}
+              onClick={() => handleProductClick(item.id)}
+            >
+              <div className={styles.imgContent}>
+                <img
+                  className={styles.productImg}
+                  src={item.imageUrl[0]}
+                  alt="image product item"
+                />
+              </div>
+              <div className={styles.aboutProduct}>
+                <p className={styles.titleProduct}>{item.title}</p>
+                <p className={styles.priceProduct}>{item.price} UAH</p>
+              </div>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
