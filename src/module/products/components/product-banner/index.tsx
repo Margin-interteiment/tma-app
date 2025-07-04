@@ -48,6 +48,9 @@ export const ProductBanner = () => {
         </button>
         <p className={style.productBannerContentTitle}>{product.title}</p>
         <p className={style.productBannerContentPrice}>{product.price} UAH</p>
+        <p className={style.productBannerContentNonPrice}>
+          {product.price} UAH
+        </p>
         <img
           className={style.productBannerImg}
           src={product.imageUrl[0]}

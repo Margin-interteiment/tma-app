@@ -15,7 +15,7 @@
   background-color: transparent;
   border: none;
   position: relative;
-  left: 31px;
+  left: 17px;
 }
 
 .productButtonsItemButtonFilter {
@@ -87,6 +87,6 @@
     justify-content: space-between;
     position: relative;
     left: -12px;
-    top: 12px;
+    top: 28px;
   }
 }

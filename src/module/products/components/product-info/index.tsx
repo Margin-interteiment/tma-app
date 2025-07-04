@@ -148,6 +148,7 @@ export const ProductInfo = () => {
         </ul>
       </div>
 
+      <div className={style.buttonGroupBottom}></div>
       <div className={style.buttonGroup}>
         <button className={style.backButton} onClick={() => navigate(-1)}>
           Назад

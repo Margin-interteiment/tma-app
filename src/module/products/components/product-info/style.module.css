@@ -1,46 +1,43 @@
 .productInfoContent {
   max-width: 400px;
   margin: 0 auto;
+  padding: 16px;
   font-family: "Segoe UI", sans-serif;
   color: #1d1d1f;
+  box-sizing: border-box;
 }
 
 .productTitle {
   font-size: 20px;
   font-weight: 400;
-  margin-top: 49px;
-  margin-left: 20px;
-  max-width: 200px;
+  margin-bottom: 8px;
+  text-align: left;
   color: #1f1f1f;
+  margin-top: 17px;
+}
+
+.productPriceContent {
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 13px;
 }
 
 .productPrice {
   font-size: 20px;
   font-weight: 600;
   color: #1a1a1a;
-  margin-left: 18px;
-  max-width: 200px;
-  position: relative;
-  bottom: -6px;
-}
-
-.productPriceContent {
-  border-bottom: 1px solid #e4e4e4;
-  height: 39px;
 }
 
 .productSection {
-  margin-top: 36px;
+  margin-top: 24px;
 }
 
-.sectionTitleDesk {
-  max-width: 200px;
+.sectionTitleDesk,
+.sectionTitleColor,
+.sectionTitleSize,
+.sectionTitleDetails {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
-  position: relative;
-  bottom: 22px;
-  left: 16px;
+  margin-bottom: 8px;
 }
 
 .productDescription {
@@ -48,156 +45,97 @@
   color: #8c8c8c;
   line-height: 1.4;
   font-weight: 400;
-  max-width: 332px;
-  position: relative;
-  left: 17px;
-  bottom: 16px;
 }
 
-.sectionTitleColor {
-  color: #1a1a1a;
-  max-width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  position: relative;
-  left: 17px;
-  bottom: 44px;
-}
-
-.detailsList {
-  list-style: none;
-  padding: 0;
-  flex-wrap: wrap;
-  gap: 8px;
-  position: relative;
-  bottom: 82px;
-}
-
-.colorList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  position: relative;
-  left: 10px;
-  bottom: 36px;
-  max-width: 309px;
-}
-
+.colorList,
 .sizeList {
   list-style: none;
   padding: 0;
-  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
-  max-width: 300px;
-  position: relative;
-  bottom: 55px;
-  left: 14px;
-}
-
-.colorItemBtn {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-}
-
-.colorItemBtn:disabled {
-  opacity: 0.5;
-}
-
-.colorItem {
-  padding: 6px 14px;
-  border: 1px solid #e4e4e4;
-  border-radius: 100px;
-  cursor: pointer;
-  font-size: 14px;
-  height: 36px;
-  width: 97px;
-}
-
-.colorItemBtnText {
-  position: relative;
-  bottom: 0px;
-  left: -3px;
-  order: 2;
-}
-
-.sectionTitleSize {
-  max-width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1f1f1f;
-  position: relative;
-  bottom: 64px;
-  left: 16px;
 }
 
 .sizeItem {
-  padding: 4px 14px;
   border: 1px solid #e4e4e4;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
-  height: 30px;
-  width: 60px;
+  padding: 9px 15px;
+  width: 61px;
+  height: 40px;
 }
 
+.colorItem {
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  width: 104px;
+  height: 40px;
+  padding: 6px 12px;
+}
+
+.colorItemBtn,
 .sizeItemBtn {
   background-color: transparent;
-  outline: none;
   border: none;
+  cursor: pointer;
 }
 
-.sectionTitleDetails {
-  max-width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a1a1a;
-  position: relative;
-  bottom: 74px;
-  left: 16px;
+.colorItemBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.colorItemBtn:disabled,
+.sizeItemBtn:disabled {
+  opacity: 0.5;
+}
+
+.colorCircle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #e4e4e4;
+  margin-right: 8px;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
 }
 
 .detailItem {
   display: flex;
-  padding-bottom: 18px;
+  justify-content: space-between;
+  padding: 12px 0;
   border-bottom: 1px solid #e4e4e4;
-  margin-top: 19px;
 }
 
 .detailItemText {
-  position: relative;
   color: #8c8c8c;
-  font-weight: 400;
   font-size: 14px;
-  left: 15px;
 }
 
 .detailItemSpan {
-  position: relative;
-  height: 19px;
-  top: 3px;
-  left: 130px;
   color: #1a1a1a;
-  font-weight: 400;
   font-size: 14px;
-  max-width: 116px;
-  text-align: end;
+  text-align: right;
+  max-width: 50%;
 }
 
 .buttonGroup {
-  margin-top: -62px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 64px;
 }
 
 .backButton {
@@ -214,19 +152,6 @@
   position: relative;
 }
 
-.colorCircle {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  border: 1px solid #e4e4e4;
-  order: 1;
-  position: relative;
-  top: 0px;
-  left: -7px;
-  order: 1;
-}
-
 .cartButton {
   background-color: #007aff;
   color: white;
@@ -236,7 +161,7 @@
   font-size: 14px;
   cursor: pointer;
   font-weight: 600;
-  width: 220px;
+  width: 233px;
   position: relative;
   height: 48px;
 }
@@ -244,11 +169,13 @@
 .cartButton:disabled {
   opacity: 0.5;
   pointer-events: none;
-  cursor: not-allowed;
 }
 
-.active {
-  border: 1px solid #007aff;
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
 }
 
 .popupMessage {
@@ -258,29 +185,36 @@
   transform: translate(-50%, -50%);
   z-index: 9999;
   background-color: #fff;
-  padding: 16px 24px;
+  padding: 20px;
   border-radius: 8px;
-  height: 102px;
-  width: 282px;
-  font-weight: 400;
+  width: 90%;
+  max-width: 320px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
-.popupOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9998;
+.popupMessageText {
+  font-size: 14px;
+  margin-bottom: 12px;
+  position: relative;
+  top: 5px;
 }
 
 .popupMessageBtn {
   background-color: transparent;
   border: none;
-  position: relative;
-  top: 10px;
-  left: 195px;
+  color: #007aff;
+  font-weight: 600;
   cursor: pointer;
+  position: relative;
+  top: 7px;
+  left: 98px;
+}
+
+.active {
+  border: 1px solid #007aff;
+}
+
+.colorItemBtnText {
+  margin-left: -7px;
 }

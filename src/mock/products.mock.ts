@@ -48,7 +48,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 3,
-    title: "Samsung Galaxy S24",
+    title: "Samsung Galaxy S4",
     price: 32500,
     imageUrl: [
       "/images/tel3.1.png",
@@ -114,7 +114,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 6,
-    title: "Huawei Art Mate",
+    title: "Huawei Art Mate SD",
     price: 41000,
     imageUrl: [
       "/images/tel6.1.png",
@@ -136,7 +136,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 7,
-    title: "Sony Xperia 1 VI",
+    title: "Sony Xperia 56+ Pro",
     price: 26100,
     imageUrl: [
       "/images/tel7.1.png",
@@ -158,7 +158,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 8,
-    title: "Google Pixel Pro",
+    title: "Google Pixel Pro 7S",
     price: 20000,
     imageUrl: [
       "/images/tel8.1.png",
@@ -180,7 +180,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 9,
-    title: "Xiaomi 14P Ultra",
+    title: "Xiaomi Max 6A Ultra",
     price: 22000,
     imageUrl: [
       "/images/tel9.1.png",
@@ -202,7 +202,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 10,
-    title: "Asus ROG Phone 8 Pro",
+    title: "Asus ROG AXPhone",
     price: 60000,
     imageUrl: [
       "/images/tel10.1.png",
