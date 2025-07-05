@@ -28,6 +28,7 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
 
   const closePopup = () => {
     setIsPopupOpen(false);
+    window.location.href = "/";
   };
   return (
     <>

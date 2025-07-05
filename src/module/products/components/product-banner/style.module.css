@@ -1,23 +1,22 @@
 .productBanner {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .productBannerContent {
   display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
-  max-width: 322px;
+  max-width: 343px;
   padding: 16px;
   border: 1px solid #f5f5f5;
   border-radius: 8px;
   width: 100%;
-  position: relative;
-  top: 40px;
-  position: relative;
   box-sizing: border-box;
+  position: relative;
+  margin: 24px 16px 0 16px;
 }
 
 .productBannerContentTitle {

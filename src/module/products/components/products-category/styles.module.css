@@ -1,8 +1,3 @@
-.itemCategory {
-  list-style: none;
-  margin-left: 20px;
-}
-
 .categoryBtn {
   border-radius: 12px;
   border: 1px solid #ddd;
@@ -36,17 +31,23 @@
 @media (max-width: 590px) {
   .listCategory {
     display: flex;
-    margin: 34px auto;
     overflow-x: auto;
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: #fff;
-    padding: 16px;
+    padding: 10px 16px;
+    margin: 14px auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    gap: 8px;
+  }
+
+  .listCategory::-webkit-scrollbar {
+    display: none;
   }
 
   .itemCategory {
     list-style: none;
-    margin-left: 8px;
   }
 }
