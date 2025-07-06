@@ -6,6 +6,7 @@ import { ProductButtons } from "../components/product-buttons";
 import { FilterProduct } from "../components/filter-product/filter-product";
 import { BasketButton } from "../../basket/components/basket-button";
 import { ProductBanner } from "../components/product-banner";
+import { ProductProfile } from "../components/product-profile";
 
 export const ProductPage = () => {
   const [filters, setFilters] = useState({
@@ -15,6 +16,7 @@ export const ProductPage = () => {
     colors: [] as string[],
   });
   const [isFilterOpen, setFilterOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const filteredProducts = products.filter((p) => {
     if (
@@ -49,6 +51,7 @@ export const ProductPage = () => {
     <>
       <ProductButtons
         onClickFilter={() => setFilterOpen(true)}
+        onClickProfile={() => setIsProfileOpen(true)}
         hasActiveFilters={
           filters.categories.length > 0 ||
           filters.sizes.length > 0 ||
@@ -93,6 +96,11 @@ export const ProductPage = () => {
         setOpen={setFilterOpen}
         filters={filters}
         setFilters={setFilters}
+      />
+
+      <ProductProfile
+        isOpenProfile={isProfileOpen}
+        setOpenProfile={setIsProfileOpen}
       />
 
       <BasketButton />
