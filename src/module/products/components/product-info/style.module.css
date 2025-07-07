@@ -1,37 +1,43 @@
 .productInfoContent {
   max-width: 400px;
   margin: 0 auto;
+  padding: 16px 16px 8px 16px;
   font-family: "Segoe UI", sans-serif;
   color: #1d1d1f;
+  box-sizing: border-box;
 }
 
 .productTitle {
   font-size: 20px;
   font-weight: 400;
-  margin-top: 58px;
-  margin-left: 21px;
+  margin-bottom: 8px;
+  text-align: left;
+  color: #1f1f1f;
+  margin-top: 17px;
+}
+
+.productPriceContent {
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 13px;
 }
 
 .productPrice {
   font-size: 20px;
   font-weight: 600;
   color: #1a1a1a;
-  margin-left: 18px;
-  position: relative;
-  bottom: 15px;
-  padding-bottom: 14px;
-  width: 319px;
-  border-bottom: 1px solid #ccc;
 }
 
-.sectionTitleDesk {
-  max-width: 200px;
+.productSection {
+  margin-top: 24px;
+}
+
+.sectionTitleDesk,
+.sectionTitleColor,
+.sectionTitleSize,
+.sectionTitleDetails {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
-  position: relative;
-  bottom: 22px;
-  left: 16px;
+  margin-bottom: 8px;
 }
 
 .productDescription {
@@ -39,157 +45,97 @@
   color: #8c8c8c;
   line-height: 1.4;
   font-weight: 400;
-  max-width: 332px;
-  position: relative;
-  left: 17px;
-  bottom: 29px;
 }
 
-.sectionTitleColor {
-  color: #1a1a1a;
-  max-width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  position: relative;
-  left: 17px;
-  bottom: 32px;
+.colorList,
+.sizeList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sizeItem {
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 9px 15px;
+  width: 61px;
+  height: 40px;
+}
+
+.colorItem {
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  width: 104px;
+  height: 40px;
+  padding: 6px 12px;
+}
+
+.colorItemBtn,
+.sizeItemBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.colorItemBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.colorItemBtn:disabled,
+.sizeItemBtn:disabled {
+  opacity: 0.5;
+}
+
+.colorCircle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #e4e4e4;
+  margin-right: 8px;
 }
 
 .detailsList {
   list-style: none;
   padding: 0;
-  flex-wrap: wrap;
-  gap: 8px;
-  position: relative;
-  bottom: 41px;
-}
-
-.colorList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  position: relative;
-  left: 10px;
-  bottom: 32px;
-  max-width: 309px;
-}
-
-.sizeList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-  max-width: 300px;
-  position: relative;
-  bottom: 35px;
-  left: 14px;
-}
-
-.colorItemBtn {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-}
-
-.colorItem {
-  padding: 6px 14px;
-  border: 1px solid #e4e4e4;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  height: 28px;
-  width: 64px;
-}
-
-.colorItemBtnText {
-  position: relative;
-  bottom: 8px;
-  left: -9px;
-  order: 2;
-}
-
-.sectionTitleSize {
-  max-width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1f1f1f;
-  position: relative;
-  bottom: 35px;
-  left: 14px;
-}
-
-.sizeItem {
-  padding: 11px 22px;
-  border: 1px solid #e4e4e4;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  height: 11px;
-  width: 28px;
-}
-
-.sizeItemTitle {
-  position: relative;
-  bottom: 16px;
-  right: 8px;
-}
-
-.sizeItemBtn {
-  background-color: transparent;
-  outline: none;
-  border: none;
-}
-
-.sectionTitleDetails {
-  max-width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #000000;
-  position: relative;
-  bottom: 35px;
-  left: 15px;
 }
 
 .detailItem {
   display: flex;
-  padding-bottom: 6px;
+  justify-content: space-between;
+  padding: 12px 0;
   border-bottom: 1px solid #e4e4e4;
 }
 
 .detailItemText {
-  position: relative;
   color: #8c8c8c;
-  font-weight: 400;
   font-size: 14px;
-  left: 15px;
 }
 
 .detailItemSpan {
-  position: relative;
-  height: 19px;
-  top: 16px;
-  left: 138px;
   color: #1a1a1a;
-  font-weight: 400;
   font-size: 14px;
-  max-width: 116px;
-  text-align: end;
+  text-align: right;
+  max-width: 50%;
 }
 
 .buttonGroup {
   display: flex;
-  position: relative;
-  bottom: 31px;
-  max-width: 331px;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 40px;
 }
 
 .backButton {
@@ -204,20 +150,6 @@
   width: 97px;
   height: 48px;
   position: relative;
-  left: 13px;
-}
-
-.colorCircle {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  border: 1px solid #e4e4e4;
-  order: 1;
-  position: relative;
-  top: 0px;
-  left: -13px;
-  order: 1;
 }
 
 .cartButton {
@@ -229,20 +161,21 @@
   font-size: 14px;
   cursor: pointer;
   font-weight: 600;
-  width: 215px;
+  width: 233px;
   position: relative;
-  left: 28px;
   height: 48px;
 }
 
 .cartButton:disabled {
   opacity: 0.5;
   pointer-events: none;
-  cursor: not-allowed;
 }
 
-.active {
-  border: 1px solid #007aff;
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
 }
 
 .popupMessage {
@@ -252,29 +185,36 @@
   transform: translate(-50%, -50%);
   z-index: 9999;
   background-color: #fff;
-  padding: 16px 24px;
+  padding: 20px;
   border-radius: 8px;
-  height: 102px;
-  width: 260px;
-  font-weight: 400;
+  width: 90%;
+  max-width: 320px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
-.popupOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9998;
+.popupMessageText {
+  font-size: 14px;
+  margin-bottom: 12px;
+  position: relative;
+  top: 5px;
 }
 
 .popupMessageBtn {
   background-color: transparent;
   border: none;
-  position: relative;
-  top: 10px;
-  left: 195px;
+  color: #007aff;
+  font-weight: 600;
   cursor: pointer;
+  position: relative;
+  top: 7px;
+  left: 98px;
+}
+
+.active {
+  border: 1px solid #007aff;
+}
+
+.colorItemBtnText {
+  margin-left: -7px;
 }

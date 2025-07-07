@@ -69,7 +69,25 @@ export const ProductPage = () => {
         }
       />
 
-      <ProductsList data={filteredProducts} />
+      {filteredProducts.length > 0 ? (
+        <ProductsList data={filteredProducts} />
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "60vh",
+            padding: "0 20px",
+            textAlign: "center",
+          }}
+        >
+          <p style={{ fontSize: "18px", maxWidth: "600px" }}>
+            Фільтрації за таким запитом не знайдено
+          </p>
+        </div>
+      )}
+
       <FilterProduct
         isOpen={isFilterOpen}
         setOpen={setFilterOpen}

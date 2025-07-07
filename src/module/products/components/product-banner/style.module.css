@@ -1,59 +1,83 @@
-.productBannerContent {
-  background-color: #f5f5f5;
-  padding: 10px;
-  border: 1px solid #f5f5f5;
-  width: 312px;
-  height: 153px;
-  border-radius: 16px;
-  position: relative;
-  top: 9px;
-  left: 15px;
+.productBanner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.productBannerImg {
-  width: 139px;
-  height: 125px;
+.productBannerContent {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  max-width: 343px;
+  padding: 16px;
+  border: 1px solid #f5f5f5;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
   position: relative;
-  bottom: 112px;
-  left: 171px;
+  margin: 24px 16px 0 16px;
 }
 
 .productBannerContentTitle {
   font-size: 15px;
   color: #000000;
-  position: relative;
   font-weight: 400;
-  left: 29px;
-  max-width: 150px;
-  bottom: 10px;
+  margin-bottom: 4px;
+  max-width: 100%;
+  position: relative;
+  top: 26px;
+}
+
+.productBannerContentNonPrice {
+  color: #8c8c8c;
+  text-decoration: line-through;
+  font-size: 13px;
+  font-weight: 400;
+  position: relative;
+  top: 13px;
 }
 
 .productBannerContentPrice {
-  max-width: 107px;
   color: #000000;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
+  margin-bottom: 12px;
+  top: 24px;
   position: relative;
-  top: -23px;
-  left: 27px;
+}
+
+.productBannerImg {
+  width: 140px;
+  height: auto;
+  align-self: flex-end;
+  margin-top: -90px;
+  z-index: 1;
+  margin-top: -75px;
 }
 
 .productBannerContentBtn {
-  position: relative;
-  bottom: 129px;
-  right: 113px;
   background-color: #1a1a1a;
-  padding: 7px 16px;
+  padding: 8px 16px;
   border-radius: 6px;
-  width: 85px;
-  color: #ffff;
+  color: #fff;
   font-size: 14px;
   text-align: center;
   font-weight: 600;
+  width: 79px;
+  height: 32px;
   cursor: pointer;
+  align-self: flex-start;
+  margin-top: -41px;
+  position: relative;
+  bottom: 8px;
+  left: -2px;
 }
 
 .productBannerContentCloseBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   background-color: transparent;
   border: none;
   outline: none;

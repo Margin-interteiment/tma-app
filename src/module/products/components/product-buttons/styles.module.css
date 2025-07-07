@@ -1,81 +1,36 @@
 .productButtonsList {
   display: flex;
-  max-width: 300px;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   position: relative;
-  left: -30px;
-  top: 16px;
+  top: 12px;
 }
 
 .productButtonsItem {
   list-style: none;
 }
 
-.productButtonsItemButton {
+.productButtonsItemButton,
+.productButtonsItemButtonFilter {
   background-color: transparent;
   border: none;
+  padding: 0;
+  margin: 0;
+  position: static;
 }
 
-.productButtonsImgFilter {
-  width: 20px;
-  height: 20px;
-}
+.productButtonsImgFilter,
 .productButtonsImgUser {
   width: 20px;
   height: 20px;
-  position: relative;
-  left: 86px;
 }
 
 .filterActiveBadge {
-  position: relative;
-  bottom: 12px;
+  position: absolute;
+  top: -6px;
   right: 8px;
-}
-
-@media (max-width: 1200px) {
-  .productButtonsList {
-    display: flex;
-    max-width: 300px;
-    justify-content: space-between;
-    position: relative;
-    left: 402px;
-    top: 29px;
-  }
-  .productButtonsImgUser {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    left: 76px;
-  }
-}
-@media (max-width: 992px) {
-  .productButtonsList {
-    display: flex;
-    max-width: 300px;
-    justify-content: space-between;
-    position: relative;
-    left: 346px;
-    top: 29px;
-  }
-}
-@media (max-width: 760px) {
-  .productButtonsList {
-    display: flex;
-    max-width: 300px;
-    justify-content: space-between;
-    position: relative;
-    left: 272px;
-    top: 29px;
-  }
-}
-@media (max-width: 590px) {
-  .productButtonsList {
-    display: flex;
-    max-width: 258px;
-    justify-content: space-between;
-    position: relative;
-    left: -26px;
-    top: 12px;
-  }
 }

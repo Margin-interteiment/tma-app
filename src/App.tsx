@@ -1,4 +1,4 @@
-import "./App.css";
+import "./assets/styles/index.css";
 import { Root } from "./module/root/index";
 
 function App() {

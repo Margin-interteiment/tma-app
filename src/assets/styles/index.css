@@ -1,62 +1,55 @@
 @font-face {
   font-family: "WorkSans";
-  src: url("/src/assets/fonts/WorkSans-Black.ttf") format("ttf");
+  src: url("../../assets/fonts/WorkSans-Black.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "WorkSans";
-  src: url("/src/assets/fonts/WorkSans-Bold.ttf") format("ttf");
+  src: url("../../assets/fonts/WorkSans-Bold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "WorkSans";
-  src: url("/src/assets/fonts/WorkSans-Medium.ttf") format("ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("/src/assets/fonts/WorkSans-Roman.ttf") format("ttf");
+  src: url("../../assets/fonts/WorkSans-Medium.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/src/assets/fonts/Satoshi-Bold.ttf");
+  src: url("../../assets/fonts/Satoshi-Bold.woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/src/assets/fonts/Satoshi-Medium.ttf");
+  src: url("../../assets/fonts/Satoshi-Medium.woff2");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/src/assets/fonts/Satoshi-Regular.ttf");
+  src: url("../../assets/fonts/Satoshi-Regular.woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Urbanist";
-  src: url("/src/assets/fonts/Urbanist-Medium.ttf");
+  src: url("../../assets/fonts/Urbanist-Medium.woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Urbanist";
-  src: url("/src/assets/fonts/Urbanist-SemiBold.ttf");
+  src: url("../../assets/fonts/Urbanist-SemiBold.woff2");
   font-weight: 600;
   font-style: normal;
 }
@@ -114,9 +107,9 @@ i,
 dl,
 dt,
 dd,
-/* ol,
+ol,
 ul,
-li, */
+li,
 fieldset,
 form,
 label,

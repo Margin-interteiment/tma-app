@@ -16,7 +16,7 @@ export const ProductButtons = ({
     <ul className={style.productButtonsList}>
       <li className={style.productButtonsItem}>
         <button
-          className={style.productButtonsItemButton}
+          className={style.productButtonsItemButtonFilter}
           onClick={onClickFilter}
         >
           <img src={filterIcon} className={style.productButtonsImgFilter} />

@@ -4,7 +4,7 @@ import { Category, Color, Brands,Size } from '../module/products/typing/enums';
 export const products: ProductItem[] = [
   {
     id: 1,
-    title: "Apple iPhone 15 Pro Max",
+    title: "Apple iPhone 15 Pro",
     price: 43400,
     imageUrl: [
       "https://raw.githubusercontent.com/hdpngworld/HPW/main/uploads/65038654434d0-iPhone%2015%20Pro%20Natural%20titanium%20png.png",
@@ -48,7 +48,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 3,
-    title: "Samsung  Galaxy S24 Ultra",
+    title: "Samsung Galaxy S4",
     price: 32500,
     imageUrl: [
       "/images/tel3.1.png",
@@ -70,7 +70,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 4,
-    title: "Samsung Galaxy Z Fold5",
+    title: "Samsung Galaxy F5",
     price: 40500,
     imageUrl: [
       "/images/tel4.1.png",
@@ -92,7 +92,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 5,
-    title: "Huawei Mate 60 Pro+",
+    title: "Huawei Mate 60 Pro",
     price: 57000,
     imageUrl: [
       "/images/tel5.1.png",
@@ -114,7 +114,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 6,
-    title: "Huawei P60 Art",
+    title: "Huawei Art Mate SD",
     price: 41000,
     imageUrl: [
       "/images/tel6.1.png",
@@ -136,7 +136,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 7,
-    title: "Sony Xperia 1 VI",
+    title: "Sony Xperia 56+ Pro",
     price: 26100,
     imageUrl: [
       "/images/tel7.1.png",
@@ -158,7 +158,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 8,
-    title: "Google Pixel 8 Pro",
+    title: "Google Pixel Pro 7S",
     price: 20000,
     imageUrl: [
       "/images/tel8.1.png",
@@ -180,7 +180,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 9,
-    title: "Xiaomi 14 Ultra",
+    title: "Xiaomi Max 6A Ultra",
     price: 22000,
     imageUrl: [
       "/images/tel9.1.png",
@@ -202,7 +202,7 @@ export const products: ProductItem[] = [
   },
   {
     id: 10,
-    title: "Asus ROG Phone 8 Pro",
+    title: "Asus ROG AXPhone",
     price: 60000,
     imageUrl: [
       "/images/tel10.1.png",

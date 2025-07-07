@@ -17,9 +17,11 @@ export const BasketButton = () => {
     <>
       <div className={style.basketBtnContent}>
         <button className={style.basketBtn} onClick={handleClick}>
-          <img src={bag} />
+          <img className={style.basketBtnImg} src={bag} />
           {totalCount > 0 && (
-            <span className={style.basketBadge}>{totalCount}</span>
+            <span className={style.basketBadge}>
+              <p className={style.basketBadgeTitle}>{totalCount}</p>
+            </span>
           )}
         </button>
       </div>
