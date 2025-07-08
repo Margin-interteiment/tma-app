@@ -4,8 +4,9 @@ import { useBasketStore } from "../../../../store/useBasketStore";
 import minus from "../../../../assets/images/minus.svg";
 import plus from "../../../../assets/images/plus.svg";
 import closeIcon from "../../../../assets/images/closeIcon.svg";
-import arrow from "../../../../assets/images/arrow.svg";
 import { useState } from "react";
+import { useBackButton } from "@tma.js/sdk-react";
+import { useEffect } from "react";
 
 interface BasketPageProps {
   isOpen: boolean;
@@ -16,19 +17,52 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
   const items = useBasketStore((state) => state.items);
   const { addToQuantity, removeToQuantity, removeItem } = useBasketStore();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isOrdering, setIsOrdering] = useState(false);
 
   const total = items.reduce(
     (sum, item) => sum + item.price * (item.quantity ?? 0),
     0
   );
 
-  const handleClick = () => {
-    setIsPopupOpen(true);
-  };
+  const backButton = useBackButton();
+
+  useEffect(() => {
+    if (isOpen) {
+      backButton.show();
+
+      const handleBack = () => {
+        onClose();
+      };
+
+      backButton.on("click", handleBack);
+
+      return () => {
+        backButton.hide();
+        backButton.off("click", handleBack);
+      };
+    }
+  }, [isOpen, backButton, onClose]);
 
   const closePopup = () => {
     setIsPopupOpen(false);
     window.location.href = "/";
+  };
+
+  const handleClick = () => {
+    if (isOrdering) return;
+    setIsOrdering(true);
+
+    const tgWebApp = (window as any)?.Telegram?.WebApp;
+
+    if (tgWebApp?.showAlert) {
+      window.alert("Замовлення успішно оформлене.");
+    } else {
+      alert("Замовлення успішно оформлене.");
+    }
+
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 500);
   };
   return (
     <>
@@ -36,10 +70,6 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
         <Sheet.Container>
           <Sheet.Header />
           <Sheet.Content>
-            <button className={style.basketBtn} onClick={onClose}>
-              <img className={style.arrowImg} src={arrow} alt="arrow" />
-            </button>
-
             {items.length === 0 ? (
               <div className={style.emptyBasketContent}>
                 <p className={style.emptyBasket}>Кошик порожній</p>
@@ -138,18 +168,6 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
         </Sheet.Container>
         <Sheet.Backdrop />
       </Sheet>
-      {isPopupOpen && (
-        <div className={style.popupOverlay}>
-          <div className={style.popupMessage}>
-            <p className={style.popupMessageText}>
-              Замовлення успішно оформлене.
-            </p>
-            <button className={style.popupMessageBtn} onClick={closePopup}>
-              Закрити
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 };

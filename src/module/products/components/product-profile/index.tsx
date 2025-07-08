@@ -2,7 +2,7 @@ import style from "./style.module.css";
 import { Sheet } from "react-modal-sheet";
 import { useEffect, useState } from "react";
 import { usePersonStore } from "../../../../store/personalDataStore";
-
+import { useBackButton } from "@tma.js/sdk-react";
 type ProfileProps = {
   isOpenProfile: boolean;
   setOpenProfile: (isOpenProfile: boolean) => void;
@@ -14,6 +14,7 @@ export const ProductProfile = ({
 }: ProfileProps) => {
   const [isSaved, setIsSaved] = useState(false);
   const { item, setPerson } = usePersonStore();
+  const backButton = useBackButton();
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -51,6 +52,23 @@ export const ProductProfile = ({
   }, [item, isOpenProfile]);
 
   useEffect(() => {
+    if (isOpenProfile) {
+      backButton.show();
+
+      const handleBackClick = () => {
+        setOpenProfile(false);
+      };
+
+      backButton.on("click", handleBackClick);
+
+      return () => {
+        backButton.hide();
+        backButton.off("click", handleBackClick);
+      };
+    }
+  }, [isOpenProfile]);
+
+  useEffect(() => {
     const changed =
       name !== initialData.name ||
       surname !== initialData.surname ||
@@ -73,7 +91,18 @@ export const ProductProfile = ({
 
     setPerson(newPerson);
     setIsSaved(true);
-    setIsOpenModal(true);
+
+    const tgWebApp = (window as any)?.Telegram?.WebApp;
+
+    if (tgWebApp?.showAlert) {
+      window.alert("Інформація успішно збережена");
+    } else {
+      alert("Інформація успішно збережена");
+    }
+
+    setTimeout(() => {
+      setOpenProfile(false);
+    }, 500);
   };
 
   const closeModal = () => {
@@ -140,23 +169,6 @@ export const ProductProfile = ({
               )}
             </form>
           </div>
-
-          {isOpenModal && (
-            <>
-              <div className={style.modalBackdrop}></div>
-              <div className={style.modalNotification}>
-                <p className={style.modalNotificationText}>
-                  Інформація успішно збережена
-                </p>
-                <button
-                  className={style.modalNotificationBtn}
-                  onClick={closeModal}
-                >
-                  Закрити
-                </button>
-              </div>
-            </>
-          )}
         </Sheet.Content>
       </Sheet.Container>
       <Sheet.Backdrop />

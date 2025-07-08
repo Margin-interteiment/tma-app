@@ -34,35 +34,31 @@ export const ProductBanner = () => {
   const product = products[currentIndex];
 
   return (
-    <div className={style.productBanner}>
-      <div className={style.productBannerContent}>
-        <button
-          className={style.productBannerContentCloseBtn}
-          onClick={() => setIsVisible(false)}
-        >
-          <img
-            className={style.closeIconForBanner}
-            src={closeIcon}
-            alt="close icon"
-          />
-        </button>
-        <p className={style.productBannerContentTitle}>{product.title}</p>
-        <p className={style.productBannerContentPrice}>{product.price} UAH</p>
-        <p className={style.productBannerContentNonPrice}>
-          {product.price} UAH
-        </p>
+    <div className={style.productBannerContent}>
+      <button
+        className={style.productBannerContentCloseBtn}
+        onClick={() => setIsVisible(false)}
+      >
         <img
-          className={style.productBannerImg}
-          src={product.imageUrl[0]}
-          alt={product.imageUrl[0]}
+          className={style.closeIconForBanner}
+          src={closeIcon}
+          alt="close icon"
         />
-        <button
-          className={style.productBannerContentBtn}
-          onClick={() => navigate(`/product/${product.id}`)}
-        >
-          Купити
-        </button>
-      </div>
+      </button>
+      <p className={style.productBannerContentTitle}>{product.title}</p>
+      <p className={style.productBannerContentPrice}>{product.price} UAH</p>
+      <p className={style.productBannerContentNonPrice}>{product.price} UAH</p>
+      <img
+        className={style.productBannerImg}
+        src={product.imageUrl[0]}
+        alt={product.imageUrl[0]}
+      />
+      <button
+        className={style.productBannerContentBtn}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
+        Купити
+      </button>
     </div>
   );
 };

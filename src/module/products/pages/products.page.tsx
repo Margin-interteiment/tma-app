@@ -18,6 +18,8 @@ export const ProductPage = () => {
   const [isFilterOpen, setFilterOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
+  const telegram = (window as any).Telegram.WebApp;
+
   const filteredProducts = products.filter((p) => {
     if (
       filters.categories.length > 0 &&

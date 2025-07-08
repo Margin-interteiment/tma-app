@@ -1,11 +1,31 @@
 import style from "./style.module.css";
 import { products } from "../../../../mock/products.mock";
 import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useBasketStore } from "../../../../store/useBasketStore";
+import { useBackButton, usePopup } from "@tma.js/sdk-react";
+
 export const ProductInfo = () => {
   const addToBasket = useBasketStore((state) => state.addToBasket);
-  const [showMessage, setShowMessage] = useState(false);
+  const backButton = useBackButton();
+  const popup = usePopup();
+  const navigate = useNavigate();
+  const telegram: any = (window as any).Telegram.WebApp;
+
+  useEffect(() => {
+    backButton.show();
+
+    const onBack = () => {
+      navigate(-1);
+    };
+
+    backButton.on("click", onBack);
+
+    return () => {
+      backButton.hide();
+      backButton.off("click", onBack);
+    };
+  }, [backButton, navigate]);
 
   const { id } = useParams();
 
@@ -17,7 +37,6 @@ export const ProductInfo = () => {
     Золотий: "#D7A55B",
   };
 
-  const navigate = useNavigate();
   const product = products.find((p) => p.id === Number(id));
 
   const [clicked, setClicked] = useState<
@@ -57,23 +76,29 @@ export const ProductInfo = () => {
 
   const isReadyToAdd = !!getActiveValue("color") && !!getActiveValue("size");
 
-  const handleAddToBasket = () => {
+  const handleAddToBasket = async () => {
     const existingItem = useBasketStore
       .getState()
       .items.find((item) => item.id === product.id);
 
     if (existingItem) {
-      setShowMessage(true);
-    } else {
-      addToBasket({
-        id: product.id,
-        name: product.title,
-        price: product.price,
-        image: product.imageUrl?.[0],
-        color: getActiveValue("color"),
-      });
-      navigate("/");
+      const tgWebApp = (window as any)?.Telegram?.WebApp;
+
+      if (tgWebApp?.showAlert) {
+        window.alert("Цей продукт вже знаходиться в корзині.");
+      }
+      return;
     }
+
+    addToBasket({
+      id: product.id,
+      name: product.title,
+      price: product.price,
+      image: product.imageUrl?.[0],
+      color: getActiveValue("color"),
+    });
+
+    navigate("/");
   };
 
   return (
@@ -161,23 +186,6 @@ export const ProductInfo = () => {
           Додати в кошик
         </button>
       </div>
-
-      {showMessage && (
-        <>
-          <div className={style.popupOverlay} />
-          <div className={style.popupMessage}>
-            <p className={style.popupMessageText}>
-              Цей продукт вже знаходиться в корзині
-            </p>
-            <button
-              className={style.popupMessageBtn}
-              onClick={() => navigate(-1)}
-            >
-              Закрити
-            </button>
-          </div>
-        </>
-      )}
     </div>
   );
 };
