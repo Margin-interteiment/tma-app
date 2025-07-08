@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
+    "@telegram-apps/sdk": "^3.11.4",
     "@telegram-apps/sdk-react": "^3.3.6",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

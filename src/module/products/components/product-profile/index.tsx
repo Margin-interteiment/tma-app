@@ -2,7 +2,10 @@ import style from "./style.module.css";
 import { Sheet } from "react-modal-sheet";
 import { useEffect, useState } from "react";
 import { usePersonStore } from "../../../../store/personalDataStore";
-import { useBackButton } from "@tma.js/sdk-react";
+import { useBackButton, usePopup } from "@tma.js/sdk-react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 type ProfileProps = {
   isOpenProfile: boolean;
   setOpenProfile: (isOpenProfile: boolean) => void;
@@ -12,13 +15,58 @@ export const ProductProfile = ({
   isOpenProfile,
   setOpenProfile,
 }: ProfileProps) => {
+  const tg = (window as any).Telegram?.WebApp;
   const [isSaved, setIsSaved] = useState(false);
   const { item, setPerson } = usePersonStore();
   const backButton = useBackButton();
+  const popup = usePopup();
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [telephone, setTelephone] = useState("");
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [nameError, setNameError] = useState("");
+  const [dateError, setDateError] = useState("");
+  const [telError, setTelError] = useState("");
+  const [showSwitch, setShowSwitch] = useState(true);
+
+  const [username, setUsername] = useState(
+    tg?.initDataUnsafe?.user?.username || ""
+  );
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^[a-zA-Zа-яА-ЯіІїЇєЄґҐ']*$/u.test(value) || value === "") {
+      setName(value);
+      setNameError("");
+    } else {
+      setName(value);
+      setNameError("Допустимі лише літери.");
+    }
+  };
+
+  const today = new Date();
+  const minAllowedDate = new Date(today.getFullYear() - 100, 0, 1);
+  const maxAllowedDate = new Date(
+    today.getFullYear() - 15,
+    today.getMonth(),
+    today.getDate() - 1
+  );
+
+  const handleDateChange = (date: Date | null) => {
+    if (!date) {
+      setStartDate(null);
+      return;
+    }
+
+    setStartDate(date);
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^(\+)?[0-9]*$/.test(value) && value !== "") {
+      setTelephone(value);
+    }
+  };
 
   const [initialData, setInitialData] = useState({
     name: "",
@@ -40,11 +88,13 @@ export const ProductProfile = ({
         surname: item.surname,
         telephone: phone,
       });
+      setUsername(item.username);
       setIsSaved(true);
     } else {
       setName("");
       setSurname("");
       setTelephone("");
+      setUsername("");
       setInitialData({ name: "", surname: "", telephone: "" });
       setIsSaved(false);
     }
@@ -69,6 +119,8 @@ export const ProductProfile = ({
   }, [isOpenProfile]);
 
   useEffect(() => {
+    if (!tg) return;
+
     const changed =
       name !== initialData.name ||
       surname !== initialData.surname ||
@@ -81,28 +133,61 @@ export const ProductProfile = ({
     }
   }, [name, surname, telephone, initialData]);
 
-  const handleSaveToggle = () => {
+  const handleSaveToggle = async () => {
+    setDateError("");
+    setTelError("");
+
+    if (!startDate) {
+      setDateError("Це поле є обов'язковим");
+      return;
+    }
+
+    if (!telephone.trim()) {
+      setTelError("Телефон є обов'язковим");
+      return;
+    }
     const newPerson = {
       id: item?.id || Date.now(),
       name,
       surname,
+      username,
       telephone: Number(telephone),
     };
 
     setPerson(newPerson);
     setIsSaved(true);
+    setShowSwitch(true);
 
-    const tgWebApp = (window as any)?.Telegram?.WebApp;
-
-    if (tgWebApp?.showAlert) {
-      window.alert("Інформація успішно збережена");
-    } else {
-      alert("Інформація успішно збережена");
-    }
+    setTimeout(async () => {
+      try {
+        if (popup) {
+          await popup.open({
+            message: "Інформація успішно збережена",
+            buttons: [
+              {
+                id: "ok",
+                type: "default",
+                text: "ОК",
+              },
+            ],
+          });
+        } else {
+          if (tg?.showAlert) {
+            tg.showAlert("Інформація успішно збережена");
+          } else {
+            alert("Інформація успішно збережена");
+          }
+        }
+      } catch (error) {
+        console.error("Error showing popup:", error);
+      }
+    }, 600);
 
     setTimeout(() => {
-      setOpenProfile(false);
-    }, 500);
+      setShowSwitch(false);
+      setIsOpenModal(true);
+      window.location.href = "/";
+    }, 1000);
   };
 
   const closeModal = () => {
@@ -110,7 +195,7 @@ export const ProductProfile = ({
     setOpenProfile(false);
   };
 
-  const shouldShowSwitch = !item || isChanged;
+  const shouldShowSwitch = !item || isChanged || showSwitch;
 
   return (
     <Sheet isOpen={isOpenProfile} onClose={() => setOpenProfile(false)}>
@@ -123,34 +208,62 @@ export const ProductProfile = ({
               <label className={style.formLabel}>
                 <p className={style.formLabelName}>Ім'я</p>
                 <input
-                  className={style.inputName}
+                  className={`${style.inputName} ${
+                    nameError ? style.inputError : ""
+                  }`}
                   type="text"
                   placeholder="Введіть ваше ім'я"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={handleNameChange}
                   required
                 />
               </label>
               <label className={style.formLabel}>
-                <p className={style.formLabelSurname}>Прізвище</p>
-                <input
-                  className={style.inputSurname}
-                  type="text"
-                  placeholder="Введіть ваше прізвище"
-                  value={surname}
-                  onChange={(e) => setSurname(e.target.value)}
-                  required
+                <p className={style.formLabelSurname}>Дата народження</p>
+                <DatePicker
+                  selected={startDate}
+                  onChange={handleDateChange}
+                  className={`${style.datePick} ${
+                    dateError ? style.datePickError : ""
+                  }`}
+                  dateFormat="dd.MM.yyyy"
+                  placeholderText="Оберіть вашу дату"
+                  maxDate={maxAllowedDate}
+                  minDate={minAllowedDate}
+                  showYearDropdown
+                  scrollableYearDropdown
+                  yearDropdownItemNumber={100}
                 />
+                {dateError && (
+                  <span className={style.dataErrorText}>{dateError}</span>
+                )}
               </label>
               <label className={style.formLabel}>
                 <p className={style.formLabelNumber}>Номер</p>
                 <input
-                  className={style.inputNum}
+                  className={`${style.inputNum} ${
+                    telError ? style.telError : ""
+                  }`}
                   type="tel"
                   placeholder="Введіть ваш номер"
                   value={telephone}
-                  onChange={(e) => setTelephone(e.target.value)}
+                  onChange={handlePhoneChange}
                   required
+                />
+                {telError && (
+                  <span className={style.telErrorText}>{telError}</span>
+                )}
+              </label>
+
+              <label htmlFor="username" className={style.usernameLabel}>
+                Нікнейм
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="Ваш нік"
+                  className={style.usernameInput}
+                  value={tg.initDataUnsafe?.user?.username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </label>
 
@@ -166,6 +279,10 @@ export const ProductProfile = ({
                     <span className={style.slider}></span>
                   </label>
                 </div>
+              )}
+
+              {nameError && (
+                <span className={style.errorText}>{nameError}</span>
               )}
             </form>
           </div>

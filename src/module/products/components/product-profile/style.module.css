@@ -27,7 +27,7 @@
   flex-direction: column;
   gap: 8px;
   font-weight: 600;
-  color: #000;
+  color: #1a1a1a;
 }
 
 .formLabelName,
@@ -35,7 +35,7 @@
 .formLabelNumber {
   font-size: 14px;
   font-weight: 600;
-  color: #000;
+  color: #1a1a1a;
 }
 
 .inputName,
@@ -47,7 +47,7 @@
   font-size: 16px;
   font-weight: 400;
   outline: none;
-  color: #000;
+  color: #1a1a1a;
   padding: 10px 16px;
   box-sizing: border-box;
   height: 55px;
@@ -167,4 +167,86 @@ input:checked + .slider {
 input:checked + .slider::before {
   transform: translateX(22px);
   background-color: #fff;
+}
+.datePick {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  color: #1a1a1a;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  height: 55px;
+  font-weight: 400;
+}
+
+.inputName {
+  border: 1px solid #e4e4e4;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.inputError {
+  border-color: rgb(224, 20, 20);
+}
+
+.errorText {
+  color: rgb(233, 35, 35);
+  font-size: 12px;
+  position: relative;
+  bottom: 386px;
+  left: 3px;
+  font-weight: 600;
+}
+
+.datePickError {
+  border: 1px solid rgb(224, 20, 20);
+}
+
+.dataErrorText {
+  color: rgb(233, 35, 35);
+  font-size: 12px;
+}
+
+.telError {
+  border: 1px solid rgb(224, 20, 20);
+}
+
+.telErrorText {
+  color: rgb(233, 35, 35);
+  font-size: 12px;
+}
+
+.datePick::placeholder {
+  color: #8c8c8c;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.usernameInput {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  color: #1a1a1a;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  height: 55px;
+  margin-top: 11px;
+}
+
+.usernameLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.usernameInput::placeholder {
+  color: #8c8c8c;
+  font-size: 14px;
+  font-weight: 400;
 }

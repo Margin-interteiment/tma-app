@@ -82,10 +82,28 @@ export const ProductInfo = () => {
       .items.find((item) => item.id === product.id);
 
     if (existingItem) {
-      const tgWebApp = (window as any)?.Telegram?.WebApp;
-
-      if (tgWebApp?.showAlert) {
-        window.alert("Цей продукт вже знаходиться в корзині.");
+      try {
+        if (popup) {
+          await popup.open({
+            message: "Цей продукт вже знаходиться в корзині.",
+            buttons: [
+              {
+                id: "ok",
+                type: "default",
+                text: "ОК",
+              },
+            ],
+          });
+        } else {
+          const tgWebApp = (window as any)?.Telegram?.WebApp;
+          if (tgWebApp?.showAlert) {
+            tgWebApp.showAlert("Цей продукт вже знаходиться в корзині.");
+          } else {
+            alert("Цей продукт вже знаходиться в корзині.");
+          }
+        }
+      } catch (error) {
+        console.error("Error showing popup:", error);
       }
       return;
     }

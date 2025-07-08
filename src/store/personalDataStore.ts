@@ -6,6 +6,7 @@ type PersonalData = {
   name: string;
   surname: string;
   telephone: number;
+  username:string;
   quantity?: number;
 };
 

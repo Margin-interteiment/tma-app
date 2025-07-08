@@ -5,7 +5,7 @@ import minus from "../../../../assets/images/minus.svg";
 import plus from "../../../../assets/images/plus.svg";
 import closeIcon from "../../../../assets/images/closeIcon.svg";
 import { useState } from "react";
-import { useBackButton } from "@tma.js/sdk-react";
+import { useBackButton, usePopup } from "@tma.js/sdk-react";
 import { useEffect } from "react";
 
 interface BasketPageProps {
@@ -18,6 +18,7 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
   const { addToQuantity, removeToQuantity, removeItem } = useBasketStore();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
+  const popup = usePopup();
 
   const total = items.reduce(
     (sum, item) => sum + item.price * (item.quantity ?? 0),
@@ -48,22 +49,39 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
     window.location.href = "/";
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (isOrdering) return;
     setIsOrdering(true);
 
-    const tgWebApp = (window as any)?.Telegram?.WebApp;
-
-    if (tgWebApp?.showAlert) {
-      window.alert("Замовлення успішно оформлене.");
-    } else {
-      alert("Замовлення успішно оформлене.");
+    try {
+      if (popup) {
+        await popup.open({
+          message: "Замовлення успішно оформлене.",
+          buttons: [
+            {
+              id: "ok",
+              type: "default",
+              text: "ОК",
+            },
+          ],
+        });
+      } else {
+        const tgWebApp = (window as any)?.Telegram?.WebApp;
+        if (tgWebApp?.showAlert) {
+          tgWebApp.showAlert("Замовлення успішно оформлене.");
+        } else {
+          alert("Замовлення успішно оформлене.");
+        }
+      }
+    } catch (error) {
+      console.error("Error showing popup:", error);
     }
 
     setTimeout(() => {
       window.location.href = "/";
     }, 500);
   };
+
   return (
     <>
       <Sheet isOpen={isOpen} onClose={onClose}>

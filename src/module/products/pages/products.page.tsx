@@ -88,7 +88,7 @@ export const ProductPage = () => {
           }}
         >
           <p style={{ fontSize: "18px", maxWidth: "600px" }}>
-            Фільтрації за таким запитом не знайдено
+            Продуктів за таким запитом не знайдено
           </p>
         </div>
       )}
