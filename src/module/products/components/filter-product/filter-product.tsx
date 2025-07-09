@@ -2,7 +2,8 @@ import { Sheet } from "react-modal-sheet";
 import { OptionColor } from "../option-color";
 import { OptionSelect } from "../option-select";
 import style from "./styles.module.css";
-
+import { useBackButton } from "@tma.js/sdk-react";
+import { useEffect } from "react";
 type FilterProductProps = {
   isOpen: boolean;
   setOpen: (isOpen: boolean) => void;
@@ -26,6 +27,25 @@ export const FilterProduct = ({
   filters,
   setFilters,
 }: FilterProductProps) => {
+  const backButton = useBackButton();
+
+  useEffect(() => {
+    if (isOpen) {
+      backButton.show();
+
+      const handleBack = () => {
+        setOpen(false);
+      };
+
+      backButton.on("click", handleBack);
+
+      return () => {
+        backButton.hide();
+        backButton.off("click", handleBack);
+      };
+    }
+  }, [isOpen]);
+
   const handleApplyFilters = () => {
     setOpen(false);
   };

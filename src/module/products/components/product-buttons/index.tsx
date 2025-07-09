@@ -6,11 +6,13 @@ import activeBadge from "../../../../assets/images/markOfFilter.svg";
 type ProductButtonsProps = {
   onClickFilter: () => void;
   hasActiveFilters?: boolean;
+  onClickProfile: () => void;
 };
 
 export const ProductButtons = ({
   onClickFilter,
   hasActiveFilters = false,
+  onClickProfile,
 }: ProductButtonsProps) => {
   return (
     <ul className={style.productButtonsList}>
@@ -31,7 +33,10 @@ export const ProductButtons = ({
         </button>
       </li>
       <li className={style.productButtonsItem}>
-        <button className={style.productButtonsItemButton}>
+        <button
+          className={style.productButtonsItemButton}
+          onClick={onClickProfile}
+        >
           <img src={userIcon} className={style.productButtonsImgUser} />
         </button>
       </li>

@@ -183,3 +183,33 @@ html,
 body {
   overflow-x: hidden;
 }
+
+.datepicker-modal {
+  position: fixed !important;
+  width: 100% !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  -ms-flex-align: center !important;
+  z-index: 99999 !important;
+  -ms-flex-pack: center !important;
+}
+
+.datepicker {
+  position: absolute;
+  left: 24px !important;
+  bottom: 127px !important;
+  width: 89% !important;
+  z-index: 1;
+  font-size: 16px;
+  text-align: center;
+  font-family: arial, verdana, sans-serif;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  height: 46% !important;
+  user-select: none;
+  border-radius: 29px;
+}

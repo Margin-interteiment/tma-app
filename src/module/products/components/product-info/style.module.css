@@ -65,6 +65,10 @@
   padding: 9px 15px;
   width: 61px;
   height: 40px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .colorItem {
@@ -76,6 +80,10 @@
   width: 104px;
   height: 40px;
   padding: 6px 12px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .colorItemBtn,
@@ -83,6 +91,14 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .colorItemBtn {
@@ -104,6 +120,9 @@
   border-radius: 50%;
   border: 1px solid #e4e4e4;
   margin-right: 8px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .detailsList {
@@ -150,6 +169,14 @@
   width: 97px;
   height: 48px;
   position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .cartButton {
@@ -164,11 +191,69 @@
   width: 233px;
   position: relative;
   height: 48px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .cartButton:disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btnLoading {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.colorItem,
+.sizeItem {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.backButton,
+.cartButton {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .colorItem,
+  .sizeItem,
+  .backButton,
+  .cartButton {
+    animation: none;
+    transition: none;
+  }
+}
+
+.active {
+  border: 1px solid #007aff;
+}
+
+.colorItemBtnText {
+  margin-left: -7px;
 }
 
 .popupOverlay {
@@ -209,12 +294,4 @@
   position: relative;
   top: 7px;
   left: 98px;
-}
-
-.active {
-  border: 1px solid #007aff;
-}
-
-.colorItemBtnText {
-  margin-left: -7px;
 }

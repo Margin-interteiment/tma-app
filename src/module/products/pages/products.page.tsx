@@ -6,6 +6,7 @@ import { ProductButtons } from "../components/product-buttons";
 import { FilterProduct } from "../components/filter-product/filter-product";
 import { BasketButton } from "../../basket/components/basket-button";
 import { ProductBanner } from "../components/product-banner";
+import { UserProfile } from "../../account/components/user-profile/profile-page";
 
 export const ProductPage = () => {
   const [filters, setFilters] = useState({
@@ -15,6 +16,7 @@ export const ProductPage = () => {
     colors: [] as string[],
   });
   const [isFilterOpen, setFilterOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const filteredProducts = products.filter((p) => {
     if (
@@ -49,6 +51,7 @@ export const ProductPage = () => {
     <>
       <ProductButtons
         onClickFilter={() => setFilterOpen(true)}
+        onClickProfile={() => setIsProfileOpen(true)}
         hasActiveFilters={
           filters.categories.length > 0 ||
           filters.sizes.length > 0 ||
@@ -83,7 +86,7 @@ export const ProductPage = () => {
           }}
         >
           <p style={{ fontSize: "18px", maxWidth: "600px" }}>
-            Фільтрації за таким запитом не знайдено
+            Продуктів за такою фільтрацією не знайдено
           </p>
         </div>
       )}
@@ -93,6 +96,11 @@ export const ProductPage = () => {
         setOpen={setFilterOpen}
         filters={filters}
         setFilters={setFilters}
+      />
+
+      <UserProfile
+        isOpenProfile={isProfileOpen}
+        setOpenProfile={setIsProfileOpen}
       />
 
       <BasketButton />
