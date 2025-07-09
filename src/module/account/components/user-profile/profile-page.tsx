@@ -16,6 +16,7 @@ type UserData = {
   surname: string;
   telephone: string;
   birthDate: Date | null;
+  username: string;
 };
 
 export const UserProfile = ({
@@ -32,6 +33,7 @@ export const UserProfile = ({
     surname: "",
     telephone: "",
     birthDate: null,
+    username: "",
   });
 
   const [originalUserData, setOriginalUserData] = useState<UserData>({
@@ -39,11 +41,13 @@ export const UserProfile = ({
     surname: "",
     telephone: "",
     birthDate: null,
+    username: "",
   });
 
   const [nameError, setNameError] = useState("");
   const [dateError, setDateError] = useState("");
   const [telError, setTelError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
   const [isSaved, setIsSaved] = useState(false);
   const [showSwitch, setShowSwitch] = useState(false);
   const [isChanged, setIsChanged] = useState(false);
@@ -64,7 +68,7 @@ export const UserProfile = ({
   const user = initData?.user;
   const idUser = user?.id || "";
   const firstName = user?.firstName || "";
-  const username = user?.username || "";
+  const defaultUsername = user?.username || "";
   const photoUrl = user?.photoUrl || "";
   const today = new Date();
   const minAllowedDate = new Date(today.getFullYear() - 100, 0, 1);
@@ -100,6 +104,17 @@ export const UserProfile = ({
     }
   };
 
+  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^[a-zA-Z0-9_]*$/.test(value) || value === "") {
+      setUserData((prev) => ({ ...prev, username: value }));
+      setUsernameError("");
+    } else {
+      setUserData((prev) => ({ ...prev, username: value }));
+      setUsernameError("Допустимі лише латинські літери, цифри та _");
+    }
+  };
+
   const loadProfileData = () => {
     const stored = localStorage.getItem("profileData");
     if (stored) {
@@ -111,6 +126,7 @@ export const UserProfile = ({
         surname: parsed.surname,
         telephone: parsed.telephone.toString(),
         birthDate: parsed.birthDate ? new Date(parsed.birthDate) : null,
+        username: parsed.username || defaultUsername,
       };
 
       setUserData(loadedData);
@@ -124,6 +140,7 @@ export const UserProfile = ({
         surname: "",
         telephone: "",
         birthDate: null,
+        username: defaultUsername,
       };
 
       setUserData(emptyData);
@@ -158,7 +175,8 @@ export const UserProfile = ({
       userData.name !== originalUserData.name ||
       userData.surname !== originalUserData.surname ||
       userData.telephone !== originalUserData.telephone ||
-      userData.birthDate?.getTime() !== originalUserData.birthDate?.getTime();
+      userData.birthDate?.getTime() !== originalUserData.birthDate?.getTime() ||
+      userData.username !== originalUserData.username;
 
     setIsChanged(changed);
 
@@ -175,6 +193,7 @@ export const UserProfile = ({
   const handleSaveToggle = () => {
     setDateError("");
     setTelError("");
+    setUsernameError("");
 
     if (!userData.birthDate) {
       setDateError("Це поле є обов'язковим");
@@ -191,12 +210,22 @@ export const UserProfile = ({
       return;
     }
 
+    if (!userData.username.trim()) {
+      setUsernameError("Нікнейм є обов'язковим");
+      return;
+    }
+
+    if (!/^[a-zA-Z0-9_]+$/.test(userData.username)) {
+      setUsernameError("Нікнейм може містити лише літери, цифри та _");
+      return;
+    }
+
     const newPerson = {
       id: idUser || Date.now(),
       name: userData.name,
       surname: userData.surname,
       firstName,
-      username,
+      username: userData.username || defaultUsername,
       telephone: Number(userData.telephone),
       birthDate: userData.birthDate.toISOString(),
     };
@@ -320,16 +349,21 @@ export const UserProfile = ({
                 )}
               </label>
 
-              <label htmlFor="username" className={style.usernameLabel}>
-                Нікнейм
+              <label className={style.formLabel}>
+                <p className={style.formLabelName}>Нікнейм</p>
                 <input
-                  id="username"
+                  className={`${style.inputName} ${
+                    usernameError ? style.inputError : ""
+                  }`}
                   type="text"
-                  placeholder="Ваш нік"
-                  className={style.usernameInput}
-                  value={username}
-                  readOnly
+                  placeholder="Введіть ваш нікнейм"
+                  value={userData.username}
+                  onChange={handleUsernameChange}
+                  required
                 />
+                {usernameError && (
+                  <span className={style.usernameError}>{usernameError}</span>
+                )}
               </label>
 
               {showSwitch && (

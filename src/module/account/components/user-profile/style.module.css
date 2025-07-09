@@ -311,3 +311,8 @@ input:checked + .slider::before {
   font-size: 14px;
   font-weight: 400;
 }
+
+.usernameError {
+  color: rgb(233, 35, 35);
+  font-size: 12px;
+}
