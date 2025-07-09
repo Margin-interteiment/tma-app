@@ -204,7 +204,7 @@ input:checked + .slider::before {
   color: rgb(233, 35, 35);
   font-size: 12px;
   position: relative;
-  bottom: 418px;
+  bottom: 412px;
   left: 3px;
   font-weight: 600;
 }
