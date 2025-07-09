@@ -1,4 +1,3 @@
-
 import { create } from "zustand";
 
 type PersonalData = {
@@ -6,16 +5,18 @@ type PersonalData = {
   name: string;
   surname: string;
   telephone: number;
-  username:string;
-  quantity?: number;
+  username: string;
+  firstName?: string;
+  birthDate?: string;
 };
 
 type PersonalDataStore = {
-  item: PersonalData | null;
-  setPerson: (item: PersonalData) => void;
+  persona: PersonalData | null;
+  setPerson: (persona: PersonalData) => void;
 };
 
 export const usePersonStore = create<PersonalDataStore>((set) => ({
-  item: null,
-  setPerson: (item) => set({ item }),
+  persona: null,
+  setPerson: (persona) => set({ persona }),
 }));
+

@@ -61,7 +61,7 @@ export const BasketPage = ({ isOpen, onClose }: BasketPageProps) => {
             {
               id: "ok",
               type: "default",
-              text: "ОК",
+              text: "Закрити",
             },
           ],
         });

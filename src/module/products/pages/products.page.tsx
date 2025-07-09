@@ -6,7 +6,7 @@ import { ProductButtons } from "../components/product-buttons";
 import { FilterProduct } from "../components/filter-product/filter-product";
 import { BasketButton } from "../../basket/components/basket-button";
 import { ProductBanner } from "../components/product-banner";
-import { ProductProfile } from "../components/product-profile";
+import { UserProfile } from "../../account/components/user-profile/profile-page";
 
 export const ProductPage = () => {
   const [filters, setFilters] = useState({
@@ -17,8 +17,6 @@ export const ProductPage = () => {
   });
   const [isFilterOpen, setFilterOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-
-  const telegram = (window as any).Telegram.WebApp;
 
   const filteredProducts = products.filter((p) => {
     if (
@@ -88,7 +86,7 @@ export const ProductPage = () => {
           }}
         >
           <p style={{ fontSize: "18px", maxWidth: "600px" }}>
-            Продуктів за таким запитом не знайдено
+            Продуктів за такою фільтрацією не знайдено
           </p>
         </div>
       )}
@@ -100,7 +98,7 @@ export const ProductPage = () => {
         setFilters={setFilters}
       />
 
-      <ProductProfile
+      <UserProfile
         isOpenProfile={isProfileOpen}
         setOpenProfile={setIsProfileOpen}
       />

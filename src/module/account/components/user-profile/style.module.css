@@ -6,6 +6,10 @@
   background-color: #fff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 40px;
 }
 
 .profileTitle {
@@ -20,6 +24,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-height: fit-content;
 }
 
 .formLabel {
@@ -66,6 +71,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .formSaveInfo {
@@ -121,6 +127,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -168,6 +175,7 @@ input:checked + .slider::before {
   transform: translateX(22px);
   background-color: #fff;
 }
+
 .datePick {
   width: 100%;
   border: 1px solid #e4e4e4;
@@ -196,7 +204,7 @@ input:checked + .slider::before {
   color: rgb(233, 35, 35);
   font-size: 12px;
   position: relative;
-  bottom: 386px;
+  bottom: 418px;
   left: 3px;
   font-weight: 600;
 }
@@ -246,6 +254,59 @@ input:checked + .slider::before {
 }
 
 .usernameInput::placeholder {
+  color: #8c8c8c;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.userPhotoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.userPhoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.react-modal-sheet-container {
+  z-index: 2;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px -2px 16px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  transform: none;
+  height: 613px !important;
+}
+
+.btnToLocalDate {
+  position: relative;
+  text-align: start;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  outline: none;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  height: 55px;
+  margin-top: 2px;
+  color: #1a1a1a;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.changedData {
   color: #8c8c8c;
   font-size: 14px;
   font-weight: 400;

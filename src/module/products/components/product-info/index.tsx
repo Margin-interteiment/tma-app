@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 import { products } from "../../../../mock/products.mock";
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useBasketStore } from "../../../../store/useBasketStore";
 import { useBackButton, usePopup } from "@tma.js/sdk-react";
 
@@ -10,9 +10,11 @@ export const ProductInfo = () => {
   const backButton = useBackButton();
   const popup = usePopup();
   const navigate = useNavigate();
-  const telegram: any = (window as any).Telegram.WebApp;
+  const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
+    setIsComponentReady(true);
+
     backButton.show();
 
     const onBack = () => {
@@ -37,7 +39,9 @@ export const ProductInfo = () => {
     Золотий: "#D7A55B",
   };
 
-  const product = products.find((p) => p.id === Number(id));
+  const product = useMemo(() => {
+    return products.find((p) => p.id === Number(id));
+  }, [id]);
 
   const [clicked, setClicked] = useState<
     { type: "color" | "size"; value: string }[]
@@ -90,7 +94,7 @@ export const ProductInfo = () => {
               {
                 id: "ok",
                 type: "default",
-                text: "ОК",
+                text: "Закрити",
               },
             ],
           });
@@ -139,12 +143,14 @@ export const ProductInfo = () => {
               key={index}
               className={`${style.colorItem} ${
                 getActiveValue("color") === color ? style.active : ""
-              }`}
+              } ${!isComponentReady ? style.loading : ""}`}
             >
               <button
-                className={style.colorItemBtn}
+                className={`${style.colorItemBtn} ${
+                  !isComponentReady ? style.btnLoading : ""
+                }`}
                 onClick={() => handleColorClick(color)}
-                disabled={index > 2}
+                disabled={index > 2 || !isComponentReady}
               >
                 <span
                   className={style.colorCircle}
@@ -165,12 +171,14 @@ export const ProductInfo = () => {
               key={index}
               className={`${style.sizeItem} ${
                 getActiveValue("size") === size ? style.active : ""
-              }`}
+              } ${!isComponentReady ? style.loading : ""}`}
             >
               <button
-                className={style.sizeItemBtn}
+                className={`${style.sizeItemBtn} ${
+                  !isComponentReady ? style.btnLoading : ""
+                }`}
                 onClick={() => handleSizeClick(size)}
-                disabled={index > 1}
+                disabled={index > 1 || !isComponentReady}
               >
                 <p className={style.sizeItemTitle}> {size}</p>
               </button>
@@ -193,12 +201,20 @@ export const ProductInfo = () => {
 
       <div className={style.buttonGroupBottom}></div>
       <div className={style.buttonGroup}>
-        <button className={style.backButton} onClick={() => navigate(-1)}>
+        <button
+          className={`${style.backButton} ${
+            !isComponentReady ? style.btnLoading : ""
+          }`}
+          onClick={() => navigate(-1)}
+          disabled={!isComponentReady}
+        >
           Назад
         </button>
         <button
-          className={style.cartButton}
-          disabled={!isReadyToAdd}
+          className={`${style.cartButton} ${
+            !isComponentReady ? style.btnLoading : ""
+          }`}
+          disabled={!isReadyToAdd || !isComponentReady}
           onClick={handleAddToBasket}
         >
           Додати в кошик
